@@ -1,9 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
+import GameBoard from './game_board'
+import PieceO from './piece_o'
+import PieceX from './piece_x'
+export default React.createClass({
 
-export default class App extends Component {
-  render() {
+
+
+  render: function() {
+
+
+    var scale = window.innerHeight / 374;
+
+    var style = {
+      // textAlign: 'center',
+      position: 'relative'
+    };
+
     return (
-      <h1> Hello world.</h1>
+      <div id="board-container" style={style}>
+        <GameBoard scale={scale}/>
+        <PieceO scale={scale}/>
+        <PieceX scale={scale}/>
+      </div>
     );
   }
-}
+});
