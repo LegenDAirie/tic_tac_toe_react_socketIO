@@ -1,11 +1,12 @@
 import React from 'react';
 import BoardCell from './board_cell'
 
-var makeBoardCell = function( gameBoardWidth, gameBoardHeight ) {
+var makeBoardCell = function( gameBoardWidth, gameBoardHeight, handleCellSelect ) {
   var boardCells = []
   for (var i = 0; i < 3; i++) {
     for (var j = 0; j < 3; j++) {
-      boardCells.push(<BoardCell key={''+i+j} width={(gameBoardWidth / 3 )- 1} left={j * gameBoardWidth / 3} top={i*gameBoardHeight / 3}/>)
+      console.log(''+i+j);
+      boardCells.push(<BoardCell key={''+i+j} id={''+i+j} handleCellSelect={handleCellSelect} width={(gameBoardWidth / 3 )- 1} left={j * gameBoardWidth / 3} top={i*gameBoardHeight / 3}/>)
     }
   }
   return boardCells
@@ -18,7 +19,7 @@ var makeBoardCell = function( gameBoardWidth, gameBoardHeight ) {
 
 
 var GameBoard = function(props) {
-  var { scale } = props;
+  var { scale, handleCellSelect } = props;
 
   var width = 300 * scale;
   var height = 300 * scale;
@@ -40,7 +41,7 @@ var GameBoard = function(props) {
           <path fill="#B9B9B9" d="M0 99h300v2H0zm0 100h300v2H0z"/>
         </g>
       </svg>
-      {makeBoardCell(width, height)}
+      {makeBoardCell(width, height, handleCellSelect)}
     </div>
   )
 }

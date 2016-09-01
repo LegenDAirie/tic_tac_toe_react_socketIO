@@ -1,13 +1,34 @@
 import React from 'react';
-import GameBoard from './game_board'
-import PieceO from './piece_o'
-import PieceX from './piece_x'
+import merge from 'lodash/merge';
+import GameBoard from './game_board';
+import PieceO from './piece_o';
+import PieceX from './piece_x';
+
+
 export default React.createClass({
 
+  getInitialState: function() {
+    return {
+      boardState: {
+        '00': '',
+        '01': '',
+        '02': '',
+        '10': '',
+        '11': '',
+        '12': '',
+        '20': '',
+        '21': '',
+        '22': '',
+      }
+    };
+  },
 
+  handleCellSelect: function(event) {
+    console.log(event.target.id)
+
+  },
 
   render: function() {
-
 
     var scale = window.innerHeight / 374;
 
@@ -18,7 +39,7 @@ export default React.createClass({
 
     return (
       <div id="board-container" style={style}>
-        <GameBoard scale={scale}/>
+        <GameBoard scale={scale} handleCellSelect={this.handleCellSelect}/>
         <PieceO scale={scale}/>
         <PieceX scale={scale}/>
       </div>
