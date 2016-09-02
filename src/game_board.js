@@ -2,7 +2,7 @@ import React from 'react';
 import BoardCell from './board_cell'
 
 var GameBoard = function(props) {
-  var { scale, handleCellSelect } = props;
+  var { scale } = props;
 
   var height = 300 * scale;
 
@@ -10,7 +10,7 @@ var GameBoard = function(props) {
     height: height + 'px',
     position:'absolute'
   };
-  
+
   return (
     <div>
       <svg className="game-board" style={style} viewBox="0 0 300 300">
