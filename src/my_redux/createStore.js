@@ -1,35 +1,47 @@
-import { filter, each } from 'lodash';
-
-export default function createStore({ initialState, reducer }) {
-  var currentState = initialState;
+function createStore( reducer ) {
+  var state;
   var observers = [];
 
-  function dispatcher(action) {
-    currentState = reducer(action);
+  var getState = function() {
+     return state;
+  };
 
-    each(observers, function(observer) {
+  var subscribe = function( observer ) {
+    observers.push( observer );
+  };
+
+  var dispatch = function( action ) {
+    state = reducer(state, action);
+
+    observers.forEach( function( observer ) {
       observer();
     });
-  }
-
-  function getState() {
-
-    return currentState;
-  }
-
-  function subscribe(observer) {
-    observers.push(observer);
-
-    return function() {
-      observers = _.filter(observers, function(obs) {
-        return observer !== obs;
-      });
-    };
-  }
-
-  return {
-    dispatcher,
-    getState,
-    subscribe
   };
+
+  dispatch({});
+
+  return { getState: getState, subscribe: subscribe, dispatch:dispatch };
 }
+
+module.exports = createStore;
+// TESTS
+// var store = createStore( function(state, action) {
+//   var state = state || {};
+//   return state;
+// });
+//
+// var subOne = function() {
+//   console.log('subOne');
+// }
+//
+// var subTwo = function() {
+//   console.log('subTwo');
+// }
+//
+// console.log(store.getState()); // undefined?
+// store.dispatch({});
+// console.log(store.getState()); // empty obj
+// console.log(store.subscribe(subOne)); // undefined?
+// store.dispatch({}); // print subOne
+// console.log(store.subscribe(subTwo)); // undefined?
+// store.dispatch({}); // print subOne, subTwo

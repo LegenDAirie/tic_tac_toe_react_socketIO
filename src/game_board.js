@@ -2,7 +2,8 @@ import React from 'react';
 import BoardCell from './board_cell'
 
 var GameBoard = function(props) {
-  var { scale } = props;
+  // var { scale } = props;
+  var scale = 1;
 
   var height = 300 * scale;
 
