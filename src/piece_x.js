@@ -4,27 +4,13 @@ var PieceX = function(props) {
 
   var { width, left, top, handleCellSelect, id } = props;
 
-  // var width = 100 * scale + 'px';
-  // var height = 100 * scale + 'px';
-  // var positionType = 'absolute'
-
-
-
   var style = {
     height: width + 'px',
     width: width + 'px',
     left: left + 'px',
     top: top + 'px',
-    // backgroundColor: '#555',
     position:'absolute'
   };
-
-
-  // var style = {
-  //   width: width,
-  //   height: height,
-  //   position: positionType
-  // };
 
   return (
     <svg style={style} viewBox="0 0 100 100">

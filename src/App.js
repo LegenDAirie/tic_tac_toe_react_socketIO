@@ -58,14 +58,35 @@ import BoardCell from './board_cell';
 // var store = createStore(initialState, reducer);
 
 var placePieces = function(boardCells) {
+  var boardCells = ['O', '', 'X', 'O', 'O', 'O', '', 'X', ''];
   var currentCells = [];
+  var scale = 1;
+  var cellWidth = 100;
+  var cellHeight = cellWidth;
 
-  for (var i = 0; i < 3; i++) {
-    for (var j = 0; j < 3; j++) {
+  for (var rowNum = 0; rowNum < 3; rowNum++) {
+    for (var colNum = 0; colNum < 3; colNum++) {
+      var width = scale * cellWidth - 1;
+      var left = scale * colNum * cellWidth;
+      var top = scale * rowNum * cellHeight;
+      var position = '' + rowNum + colNum;
+
+      var Piece = BoardCell
+
+      if ( boardCells[rowNum*3 + colNum] == 'X' ) {
+        Piece = PieceX
+      }
+      
+      if ( boardCells[rowNum*3 + colNum] == 'O' ) {
+        Piece = PieceO
+      }
+      // } else if (boardCells[rowNum*3 + colNum] === '' ) {
+      //   Piece = BoardCell
+      // }
+
       currentCells.push(
-        <PieceX id={'' + i + j} key={'' + i + j}
-        width={1 * 100 - 1} left={1 * j * 100}
-        top={ 1 * i * 100}/>
+        <Piece id={position} key={position}
+        width={width} left={left} top={top}/>
       );
     }
   }
@@ -86,9 +107,6 @@ export default function App(props) {
     position: 'relative'
   };
 
-  // {pieces.map(function(component) {
-  //   return component;
-  // })}
   return (
     <div id="board-container" style={style}>
       <GameBoard/>

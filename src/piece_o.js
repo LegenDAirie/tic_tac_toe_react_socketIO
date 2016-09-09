@@ -2,16 +2,14 @@ import React from 'react';
 
 var PieceO = function(props) {
 
-  var { scale } = props;
-
-  var width = 100 * scale + 'px';
-  var height = 100 * scale + 'px';
-  var positionType = 'absolute'
+  var { width, left, top, handleCellSelect, id } = props;
 
   var style = {
-    width: width,
-    height: height,
-    position: positionType
+    height: width + 'px',
+    width: width + 'px',
+    left: left + 'px',
+    top: top + 'px',
+    position:'absolute'
   };
 
   return (
