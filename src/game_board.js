@@ -1,5 +1,5 @@
 import React from 'react';
-import BoardCell from './board_cell'
+import BoardCell from './board_cell';
 
 var GameBoard = function(props) {
   // var { scale } = props;
@@ -24,7 +24,7 @@ var GameBoard = function(props) {
         </g>
       </svg>
     </div>
-  )
-}
+  );
+};
 
 export default GameBoard;

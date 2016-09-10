@@ -1,23 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import createStore from './my_redux/createStore'
-import boardReducer from './my_redux/board_reducer'
-// import '../tests/board_reducer_test';
+import createStore from './my_redux/createStore';
+import boardReducer from './my_redux/board_reducer';
 import App from './App';
 
-
-var store = createStore( boardReducer )
+var store = createStore( boardReducer );
 
 var render = function render() {
   ReactDOM.render(
     <App store={store}/>,
     document.getElementById('root')
   );
-}
+};
 
-store.subscribe(render)
+store.subscribe(render);
 render();
 
+//////////////////////////////////////////////////////////////////////////////////////////
+// socket.io stuff for later
+//////////////////////////////////////////////////////////////////////////////////////////
 
 // var socket = io('http://localhost:1357');
 //

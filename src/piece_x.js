@@ -22,7 +22,7 @@ var PieceX = function(props) {
         <path d="M28.83 25l46.668 46.67-2.83 2.828L26 27.828z"/>
       </g>
     </svg>
-  )
-}
+  );
+};
 
 export default PieceX;

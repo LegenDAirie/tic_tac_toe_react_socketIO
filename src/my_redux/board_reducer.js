@@ -1,6 +1,7 @@
 //what is a reducer yo?!
 
 var boardReducer = function ( state, action ) {
+  console.log(action)
   var state = state || ['', '', '', '', '', '', '', '', ''];
 
   switch (action.type) {

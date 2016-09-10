@@ -19,8 +19,7 @@ var PieceO = function(props) {
       </title>
       <circle id="a" cx="50" cy="50" r="30" stroke="#FF9D9D" strokeWidth="6" fill="#FFF" fillRule="evenodd" fillOpacity="0"/>
     </svg>
-  )
-
-}
+  );
+};
 
 export default PieceO;

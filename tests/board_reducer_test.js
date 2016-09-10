@@ -20,7 +20,7 @@ function testDeepFreeze() {
     position: 0,
   };
   deepFreeze(stateBefore);
-  boardReducer(stateBefore, action)
+  boardReducer(stateBefore, action);
 
   console.log('deepFreeze is working!');
 };
