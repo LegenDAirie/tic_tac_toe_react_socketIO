@@ -1,16 +1,16 @@
-import React from 'react';
-import BoardCell from './board_cell';
+import React from 'react'
+import BoardCell from './board_cell'
 
 var GameBoard = function(props) {
-  // var { scale } = props;
-  var scale = 1;
+  // var { scale } = props
+  var scale = 1
 
-  var height = 300 * scale;
+  var height = 300 * scale
 
   var style = {
     height: height + 'px',
     position:'absolute'
-  };
+  }
 
   return (
     <div>
@@ -24,7 +24,7 @@ var GameBoard = function(props) {
         </g>
       </svg>
     </div>
-  );
-};
+  )
+}
 
-export default GameBoard;
+export default GameBoard

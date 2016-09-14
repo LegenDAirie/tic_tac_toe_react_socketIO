@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 var BoardCell = function(props) {
-  var { width, left, top, handleCellSelect, id } = props;
+  var { width, left, top, handleCellSelect, id } = props
 
   var style = {
     height: width + 'px',
@@ -10,13 +10,13 @@ var BoardCell = function(props) {
     top: top + 'px',
     backgroundColor: '#555',
     position:'absolute'
-  };
+  }
 
 
   return (
     <div id={id} style={style} onClick={handleCellSelect}>
     </div>
-  );
-};
+  )
+}
 
-export default BoardCell;
+export default BoardCell

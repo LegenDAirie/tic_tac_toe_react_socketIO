@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 var PieceX = function(props) {
 
-  var { width, left, top, handleCellSelect, id } = props;
+  var { width, left, top, handleCellSelect, id } = props
 
   var style = {
     height: width + 'px',
@@ -10,7 +10,7 @@ var PieceX = function(props) {
     left: left + 'px',
     top: top + 'px',
     position:'absolute'
-  };
+  }
 
   return (
     <svg style={style} viewBox="0 0 100 100">
@@ -22,7 +22,7 @@ var PieceX = function(props) {
         <path d="M28.83 25l46.668 46.67-2.83 2.828L26 27.828z"/>
       </g>
     </svg>
-  );
-};
+  )
+}
 
-export default PieceX;
+export default PieceX

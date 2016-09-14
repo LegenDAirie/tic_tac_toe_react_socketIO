@@ -1,0 +1,28 @@
+//what is a reducer yo?!
+
+const boardReducer = ( state, action ) => {
+  state = state || ['', '', '', '', '', '', '', '', '']
+
+  switch (action.type) {
+    case 'ADD_PIECE':
+
+      if ( state[action.position] !== '' ) {
+        return state
+      }
+
+      var beginningArray = state.slice(0, action.position)
+      var endingArray = state.slice(action.position+1, state.length)
+
+      return beginningArray.concat([action.piece]).concat(endingArray)
+
+
+    case 'RESET_BOARD':
+      // make a new board
+      return ['', '', '', '', '', '', '', '', '']
+
+    default:
+      return state
+  }
+}
+
+module.exports = boardReducer
