@@ -22,11 +22,11 @@ var placePieces = function(store) {
 
       var Piece = BoardCell;
 
-      if ( boardCells[rowNum*3 + colNum] == 'X' ) {
+      if ( boardCells[rowNum*3 + colNum] === 'X' ) {
         Piece = PieceX;
       }
 
-      if ( boardCells[rowNum*3 + colNum] == 'O' ) {
+      if ( boardCells[rowNum*3 + colNum] === 'O' ) {
         Piece = PieceO;
       }
 

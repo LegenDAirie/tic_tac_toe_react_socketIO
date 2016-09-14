@@ -1,4 +1,4 @@
-{
+module.exports = {
   "ecmaFeatures": {
     "jsx": true,
     "modules": true
@@ -8,15 +8,15 @@
     "node": true
   },
   "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "quotes": [2, "single"],
     "strict": [2, "never"],
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
-    "semi": [1, "always"],
     "react/react-in-jsx-scope": 2
   },
-  "plugins": [
-    "react"
-  ]
 }

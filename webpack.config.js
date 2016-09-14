@@ -1,26 +1,21 @@
-var path = require('path');
-var webpack = require('webpack');
+var validate = require('webpack-validator');
 
-module.exports = {
-  devtool: 'eval',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index'
-  ],
+var config = {
+  entry: './src/app.js',
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    path: __dirname + '/static/',
+    filename: 'bundle.js'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
-      include: path.join(__dirname, 'src')
-    }]
+    loaders: [
+      {
+        test: /\.js$/,
+        include: __dirname + '/src/',
+        loader: 'babel'
+      }
+    ]
   }
 };
+
+module.exports = validate(config);

@@ -1,7 +1,7 @@
 import React from 'react';
 
 var BoardCell = function(props) {
-  var { width, left, top, handleCellSelect, id, store } = props;
+  var { width, left, top, handleCellSelect, id } = props;
 
   var style = {
     height: width + 'px',
