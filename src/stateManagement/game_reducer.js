@@ -1,4 +1,4 @@
-// import boardReducer from './board_reducer';
+// import boardReducer from './board_reducer'
 //
 // var gameReducer = function(state = {}, action) {
 //
@@ -8,8 +8,8 @@
 //         ...state,
 //         currentPlayer: state.currentPlayer === 'X' ? 'O' : 'X',
 //         boardReducer(state.boardCells, action)
-//       };
+//       }
 //     default:
 //
 //   }
-// };
+// }
