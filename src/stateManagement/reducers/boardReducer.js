@@ -1,6 +1,6 @@
 //what is a reducer yo?!
 
-const boardReducer = ( state, action ) => {
+const boardReducer = (state, action) => {
   state = state || ['', '', '', '', '', '', '', '', '']
 
   switch (action.type) {
