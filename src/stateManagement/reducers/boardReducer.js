@@ -1,14 +1,10 @@
-import {
-  ADD_PIECE, SET_SCALE, RESET_BOARD, GAME_OVER,
-  PLAYERS,
-  addPiece, setScale, resetBoard, gameOver
-} from '../constants/actionTypes.js'
+import { ADD_PIECE, RESET_BOARD } from '../constants/actionTypes.js'
 
 const boardReducer = (state, action) => {
   state = state || ['', '', '', '', '', '', '', '', '']
 
   switch (action.type) {
-    case 'ADD_PIECE':
+    case ADD_PIECE:
 
       if ( state[action.position] !== '' ) {
         return state
@@ -20,7 +16,7 @@ const boardReducer = (state, action) => {
       return beginningArray.concat([action.piece]).concat(endingArray)
 
 
-    case 'RESET_BOARD':
+    case RESET_BOARD:
     default:
       return state
   }
