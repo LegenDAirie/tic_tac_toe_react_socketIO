@@ -2,18 +2,19 @@ import { ADD_PIECE, RESET_BOARD } from '../constants/actionTypes.js'
 
 const boardReducer = (state, action) => {
   state = state || ['', '', '', '', '', '', '', '', '']
+  const { position, piece, type } = action
 
-  switch (action.type) {
+  switch (type) {
     case ADD_PIECE:
 
-      if ( state[action.position] !== '' ) {
+      if ( state[position] !== '' ) {
         return state
       }
 
-      var beginningArray = state.slice(0, action.position)
-      var endingArray = state.slice(action.position+1, state.length)
+      var beginningArray = state.slice(0, position)
+      var endingArray = state.slice(position+1, state.length)
 
-      return beginningArray.concat([action.piece]).concat(endingArray)
+      return beginningArray.concat([piece]).concat(endingArray)
 
 
     case RESET_BOARD:
