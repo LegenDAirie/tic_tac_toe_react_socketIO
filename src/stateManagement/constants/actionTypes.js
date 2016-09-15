@@ -3,6 +3,8 @@ export const ADD_PIECE = 'ADD_PIECE'
 export const SET_SCALE = 'SET_SCALE'
 export const RESET_BOARD = 'RESET_BOARD'
 export const GAME_OVER = 'GAME_OVER'
+
+// Players
 export const PLAYERS = {
   X: 'X',
   O: 'O'

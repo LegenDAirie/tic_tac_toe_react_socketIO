@@ -1,4 +1,8 @@
-//what is a reducer yo?!
+import {
+  ADD_PIECE, SET_SCALE, RESET_BOARD, GAME_OVER,
+  PLAYERS,
+  addPiece, setScale, resetBoard, gameOver
+} from '../constants/actionTypes.js'
 
 const boardReducer = (state, action) => {
   state = state || ['', '', '', '', '', '', '', '', '']
