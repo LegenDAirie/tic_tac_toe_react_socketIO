@@ -61,5 +61,4 @@ describe('Game Reducer', function() {
       gameReducer(stateBefore, action)
     ).toEqual(stateAfter)
   })
-
 })
