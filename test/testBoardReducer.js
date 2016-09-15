@@ -4,7 +4,7 @@ import boardReducer from '../src/stateManagement/reducers/boardReducer.js'
 import { describe, it } from 'mocha' // Not required, but shows where these functions come from
 
 describe('Board Reducer', function() {
-  it('passes back a default state if state is undefined', function() {
+  it('returns a default state if passed an undefined state', function() {
     const stateAfter = ['', '', '', '', '', '', '', '', '']
     const stateBefore = undefined
     const action = {}
@@ -14,7 +14,7 @@ describe('Board Reducer', function() {
     ).toEqual(stateAfter)
   })
 
-  it('returns the default state if passed an invalid action', function() {
+  it('passes back the same state if given an invalid action', function() {
     const stateBefore = ['', 'X', '', '', 'O', '', '', '', ''];
     const stateAfter = ['', 'X', '', '', 'O', '', '', '', ''];
     const action = {};
