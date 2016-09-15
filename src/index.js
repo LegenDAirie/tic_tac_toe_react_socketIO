@@ -16,13 +16,11 @@ var render = function render() {
 store.subscribe(render)
 render()
 
-
-
 var state = {
   scale: 1,
   gameState: {
     gameOver: false,
     currentPlayer: 'X',
-    boardCells: ['', '', '', '', '', '', '', '', '']
+    boardState: ['', '', '', '', '', '', '', '', '']
   }
 }

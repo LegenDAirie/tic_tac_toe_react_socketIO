@@ -14,6 +14,17 @@ describe('Board Reducer', function() {
     ).toEqual(stateAfter)
   })
 
+  it('returns the default state if passed an invalid action', function() {
+    const stateBefore = ['', 'X', '', '', 'O', '', '', '', ''];
+    const stateAfter = ['', 'X', '', '', 'O', '', '', '', ''];
+    const action = {};
+    deepFreeze(stateBefore);
+
+    expect(
+      boardReducer(stateBefore, action)
+    ).toEqual(stateAfter);
+  })
+
   it('adds a piece to the board', function() {
     const stateBefore = ['', '', '', '', '', '', '', '', '']
     const stateAfter = ['X', '', '', '', '', '', '', '', ''];
@@ -22,17 +33,6 @@ describe('Board Reducer', function() {
       piece: 'X',
       position: 0
     };
-    deepFreeze(stateBefore);
-
-    expect(
-      boardReducer(stateBefore, action)
-    ).toEqual(stateAfter);
-  })
-
-  it('returns the default state if passed an invalid action', function() {
-    const stateBefore = ['', 'X', '', '', 'O', '', '', '', ''];
-    const stateAfter = ['', 'X', '', '', 'O', '', '', '', ''];
-    const action = {};
     deepFreeze(stateBefore);
 
     expect(
