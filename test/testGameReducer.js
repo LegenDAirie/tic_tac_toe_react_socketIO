@@ -19,20 +19,47 @@ describe('Game Reducer', function() {
   })
 
   it('passes back the same state if given an invalid action', function() {
-    // const stateBefore = {
-    //   gameOver: false,
-    //   currentPlayer: 'X',
-    //   boardState: ['', '', '', '', '', '', '', '', '']
-    // }
-    // const stateAfter = {
-    //   gameOver: false,
-    //   currentPlayer: 'X',
-    //   boardState: ['', '', '', '', '', '', '', '', '']
-    // }
-    // const action = {}
-    //
-    // expect(
-    //   gameReducer(stateBefore, action)
-    // ).toEqual(stateAfter)
+    const stateBefore = {
+      gameOver: false,
+      currentPlayer: 'X',
+      boardState: ['', '', '', 'O', '', '', '', '', '']
+    }
+    const stateAfter = {
+      gameOver: false,
+      currentPlayer: 'X',
+      boardState: ['', '', '', 'O', '', '', '', '', '']
+    }
+    const action = {}
+
+    deepFreeze(stateBefore)
+
+    expect(
+      gameReducer(stateBefore, action)
+    ).toEqual(stateAfter)
   })
+
+  it('switches a players turn when a piece is placed', function() {
+    const stateBefore = {
+      gameOver: false,
+      currentPlayer: 'X',
+      boardState: ['', '', '', '', '', '', '', '', '']
+    }
+    const stateAfter = {
+      gameOver: false,
+      currentPlayer: 'O',
+      boardState: ['X', '', '', '', '', '', '', '', '']
+    }
+    const action = {
+      type:'ADD_PIECE',
+      piece: 'X',
+      position: 0
+    }
+
+    deepFreeze(stateBefore)
+
+    expect(
+      gameReducer(stateBefore, action)
+    ).toEqual(stateAfter)
+  })
+
 })
