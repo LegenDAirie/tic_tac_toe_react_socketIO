@@ -2,7 +2,6 @@
 export const ADD_PIECE = 'ADD_PIECE'
 export const SET_SCALE = 'SET_SCALE'
 export const RESET_BOARD = 'RESET_BOARD'
-export const SET_ACTIVE_PLAYER = 'SET_ACTIVE_PLAYER'
 export const GAME_OVER = 'GAME_OVER'
 export const PLAYERS = {
   X: 'X',
@@ -24,10 +23,6 @@ export function setScale(scale) {
 
 export function resetBoard() {
   return { type: RESET_BOARD }
-}
-
-export function setActivePlayer() {
-  return { type: SET_ACTIVE_PLAYER }
 }
 
 export function gameOver() {
