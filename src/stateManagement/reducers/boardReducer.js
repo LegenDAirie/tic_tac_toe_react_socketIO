@@ -17,9 +17,6 @@ const boardReducer = (state, action) => {
 
 
     case 'RESET_BOARD':
-      // make a new board
-      return ['', '', '', '', '', '', '', '', '']
-
     default:
       return state
   }
