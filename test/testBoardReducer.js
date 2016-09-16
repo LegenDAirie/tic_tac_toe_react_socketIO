@@ -1,6 +1,5 @@
 import expect from 'expect'
 import deepFreeze from 'deep-freeze'
-import { ADD_PIECE, RESET_BOARD } from '../constants/actionTypes.js'
 import boardReducer from '../src/stateManagement/reducers/boardReducer.js'
 import { describe, it } from 'mocha' // Not required, but shows where these functions come from
 
@@ -30,7 +29,7 @@ describe('Board Reducer', function() {
     const stateBefore = ['', '', '', '', '', '', '', '', '']
     const stateAfter = ['X', '', '', '', '', '', '', '', ''];
     const action = {
-      type: ADD_PIECE,
+      type:'ADD_PIECE',
       piece: 'X',
       position: 0
     };
@@ -46,7 +45,7 @@ describe('Board Reducer', function() {
     const stateBefore = ['O', '', '', '', '', '', '', '', ''];
     const stateAfter = ['O', '', '', '', '', '', '', '', ''];
     const action = {
-      type: ADD_PIECE,
+      type:'ADD_PIECE',
       piece: 'X',
       position: 0
     };
@@ -61,7 +60,7 @@ describe('Board Reducer', function() {
     const stateBefore = ['X', 'X', 'O', 'X', 'O', 'O', '', 'O', ''];
     const stateAfter = ['', '', '', '', '', '', '', '', ''];
     const action = {
-      type: RESET_BOARD
+      type:'RESET_BOARD'
     };
     deepFreeze(stateBefore);
 
