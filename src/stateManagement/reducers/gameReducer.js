@@ -13,14 +13,14 @@ const initialState = {
 }
 
 const gameReducer = (state = initialState, action) => {
-  const { boardState, currentPlayer} = state
+  const { boardState, currentPlayer } = state
 
   switch (action.type) {
     case 'ADD_PIECE':
     return {
       currentPlayer: currentPlayer === 'X' ? 'O': 'X', // set active player
       boardState: boardReducer(boardState, action),
-      gameOver: checkIfWon(boardState, action )
+      gameOver: checkIfWon(boardState, action)
     }
     case 'RESET_BOARD':
       return Object.assign({}, initialState, {
