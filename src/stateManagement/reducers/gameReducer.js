@@ -6,7 +6,13 @@ function checkIfWon(boardState, action) {
   return false
 }
 
-const gameReducer = (state = {}, action) => {
+const initialState = {
+  currentPlayer: 'X',
+  boardState: boardReducer(undefined, {}),
+  gameOver: false
+}
+
+const gameReducer = (state = initialState, action) => {
   const { boardState, currentPlayer} = state
 
   switch (action.type) {
@@ -17,9 +23,9 @@ const gameReducer = (state = {}, action) => {
       gameOver: checkIfWon(boardState, action )
     }
     case 'RESET_BOARD':
-    return {
-      boardState: boardReducer(undefined, action)
-    }
+      return Object.assign({}, initialState, {
+        //switch starting player
+      })
     default:
       return state
   }
