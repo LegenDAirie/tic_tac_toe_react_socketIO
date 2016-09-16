@@ -1,4 +1,4 @@
-import boardReducer from '../src/stateManagement/reducers/boardReducer.js'
+import boardReducer from './boardReducer.js'
 
 function checkIfWon(boardState, action) {
   const { position, piece } = action
