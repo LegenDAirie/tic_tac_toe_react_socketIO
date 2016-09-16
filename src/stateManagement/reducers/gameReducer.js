@@ -1,5 +1,10 @@
 import boardReducer from '../src/stateManagement/reducers/boardReducer.js'
-import checkIfWonReducer from '../src/stateManagement/reducers/checkIfWonReducer.js'
+
+function checkIfWon(boardState, action) {
+  const { position, piece } = action
+  // do some calculation
+  return false
+}
 
 const gameReducer = (state = {}, action) => {
   const { boardState, currentPlayer} = state
@@ -9,7 +14,7 @@ const gameReducer = (state = {}, action) => {
     return {
       currentPlayer: currentPlayer === 'X' ? 'O': 'X', // set active player
       boardState: boardReducer(boardState, action),
-      gameOver: checkIfWonReducer(boardState, action )
+      gameOver: checkIfWon(boardState, action )
     }
     case 'RESET_BOARD':
     return {
