@@ -1,21 +1,19 @@
+# Reducer composition sudo code
+---
+#### Example state structure
+```javascript
 var exampleAppState = {
   scale: 1,
   gameState: {
     gameOver: false,
     currentPlayer: 'X',
-    boardState: ['', '', '', '', '', '', '', '', '']
+    boardState: ['', '', 'O', '', '', 'X', '', '', '']
   }
 }
-
-function calculateScale( origionalScale, action ) {
-  //calculate the scale based off of screen size and ratio
-  if ('the action is about changing the scale') {
-    return newScale
-  }
-
-  return origionalScale
-}
-
+```
+---
+#### Reducers
+```javascript
 function appStateReducer(state = {}, action) {
   return {
     scale: calculateScale(state.scale, action),
@@ -28,7 +26,7 @@ function gameStateReducer(origionalGameState, action) {
   if ('the action is about placing a piece') {
     return {
       gameOver: isGameOver(gameState.boardState, action),
-      currentPlayer: //switch to the other player logic
+      currentPlayer: //switch to the other player
       boardState: boardStateReducer(gameState.boardState, action)
     }
   }
@@ -36,17 +34,12 @@ function gameStateReducer(origionalGameState, action) {
   if ('the action is about resetting the board') {
     return {
       gameOver: false,
-      currentPlayer: //switch to player who went seccond last game
+      currentPlayer: //switch to player who went second last game
       boardState: boardStateReducer(undefined, action)
     }
   }
 
   return origionalGameState
-}
-
-function isGameOver(boardState, action) {
-  //calculate if the game has been won
-  return gameOverStatus
 }
 
 function boardStateReducer(boardState, action) {
@@ -59,3 +52,19 @@ function boardStateReducer(boardState, action) {
     return emptyBoard
   }
 }
+```
+---
+#### Helper functions
+```javascript
+function calculateScale( origionalScale, action ) {
+  if ('the action is about changing the scale then') {
+    return newScale
+  }
+  return origionalScale
+}
+
+function isGameOver(boardState, action) {
+  //calculate if the game has been won
+  return gameOverStatus
+}
+```
