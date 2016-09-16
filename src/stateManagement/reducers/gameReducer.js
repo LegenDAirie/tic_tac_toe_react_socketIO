@@ -13,8 +13,8 @@ const initialState = {
   gameOver: false
 }
 
-const gameReducer = (state = initialState, action) => {
-  const { boardState, currentPlayer } = state
+const gameReducer = (gameState = initialState, action) => {
+  const { boardState, currentPlayer } = gameState
 
   switch (action.type) {
     case ADD_PIECE:
@@ -28,7 +28,7 @@ const gameReducer = (state = initialState, action) => {
         //switch starting player
       })
     default:
-      return state
+      return gameState
   }
 }
 
