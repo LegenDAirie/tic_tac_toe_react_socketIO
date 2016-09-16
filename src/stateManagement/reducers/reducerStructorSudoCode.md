@@ -22,7 +22,6 @@ function appStateReducer(state = {}, action) {
 }
 
 function gameStateReducer(origionalGameState, action) {
-
   if ('the action is about placing a piece') {
     return {
       gameOver: isGameOver(gameState.boardState, action),
@@ -44,7 +43,6 @@ function gameStateReducer(origionalGameState, action) {
 
 function boardStateReducer(boardState, action) {
   if ('the action is about placing a piece') {
-
     return newBoardWithPiecePlaced
   }
 
