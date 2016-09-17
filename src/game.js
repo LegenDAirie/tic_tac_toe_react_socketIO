@@ -1,5 +1,4 @@
 import React from 'react'
-// import { merge, each, times } from 'lodash'
 import GameBoard from './gameBoard'
 import PieceX from './pieceX'
 import PieceO from './pieceO'
@@ -47,8 +46,6 @@ var placePieces = function(store) {
 
   return currentCells
 }
-
-
 
 export default function App(props) {
 
