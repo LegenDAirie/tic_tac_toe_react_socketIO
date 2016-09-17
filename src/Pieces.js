@@ -4,7 +4,8 @@ import PieceO from './pieceO'
 import BoardCell from './boardCell'
 
 var placePieces = function(store) {
-  var boardCells = store.getState()
+  var state = store.getState()
+  var boardCells = state.gameState.boardState
   var currentCells = []
   var scale = 1
   var cellWidth = 100
