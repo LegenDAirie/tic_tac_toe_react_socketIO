@@ -32,7 +32,7 @@ var placePieces = function(store) {
       currentCells.push(
         <Piece id={identifier} key={identifier} store={store}
           width={width} left={left} top={top}
-          handleCellSelect={function(event) {
+          handleCellSelect={function() {
             store.dispatch({
               type: 'ADD_PIECE',
               position: position,
