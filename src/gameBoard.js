@@ -1,17 +1,11 @@
 import React from 'react'
-import BoardCell from './boardCell'
 
 var GameBoard = function(props) {
-  // var { scale } = props
-  var scale = 1
-
-  var height = 300 * scale
-
+  var height = 300 * props.scale
   var style = {
     height: height + 'px',
     position:'absolute'
   }
-
   return (
     <div>
       <svg className="game-board" style={style} viewBox="0 0 300 300">
