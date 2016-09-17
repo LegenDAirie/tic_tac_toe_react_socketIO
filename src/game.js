@@ -12,6 +12,7 @@ const App = function (props) {
   return (
     <div id="board-container" style={style}>
       <GameBoard/>
+      
     </div>
   )
 }
