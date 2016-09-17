@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import createStore from './stateManagement/createStore'
-import boardReducer from './stateManagement/boardReducer'
+import boardReducer from './stateManagement/reducers/boardReducer'
 import Game from './game.js'
 
 var store = createStore(boardReducer)
