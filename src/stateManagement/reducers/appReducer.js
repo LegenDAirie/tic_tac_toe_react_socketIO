@@ -1,4 +1,4 @@
-import { SET_SCALE } from '../constants/actionTypes.js'
+import { SET_SCALE } from '../actionTypes.js'
 import gameReducer from './gameReducer.js'
 
 const getScale = ({ currentScale, action }) => {
