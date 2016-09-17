@@ -8,7 +8,7 @@ var store = createStore(appReducer)
 
 var render = function render() {
   ReactDOM.render(
-    <Game store={store}/>,
+    <Game store={ store }/>,
     document.getElementById('root')
   )
 }

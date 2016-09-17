@@ -8,7 +8,7 @@ var GameBoard = function(props) {
   }
   return (
     <div>
-      <svg className="game-board" style={style} viewBox="0 0 300 300">
+      <svg className="game-board" style={ style } viewBox="0 0 300 300">
         <title>
           TicTacToe Board
         </title>
@@ -22,7 +22,7 @@ var GameBoard = function(props) {
 }
 
 GameBoard.propTypes = {
-  scale: React.PropTypes.number
+  scale: React.PropTypes.number.isRequired
 }
 
 export default GameBoard
