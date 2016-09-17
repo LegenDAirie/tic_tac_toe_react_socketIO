@@ -2,6 +2,7 @@ import React from 'react'
 import PieceX from './pieceX'
 import PieceO from './pieceO'
 import BoardCell from './boardCell'
+import { addPiece } from './stateManagement/actionTypes'
 
 var placePieces = function(store) {
   var state = store.getState()
@@ -32,13 +33,7 @@ var placePieces = function(store) {
       currentCells.push(
         <Piece id={identifier} key={identifier} store={store}
           width={width} left={left} top={top}
-          handleCellSelect={function() {
-            store.dispatch({
-              type: 'ADD_PIECE',
-              position: position,
-              piece: 'X'
-            })
-          }}
+          handleCellSelect={() => store.dispatch(addPiece(position, state.gameState.currentPlayer))}
         />
       )
     }
