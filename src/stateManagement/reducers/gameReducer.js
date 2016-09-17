@@ -1,5 +1,6 @@
-import { ADD_PIECE, RESET_BOARD, PLAYERS } from '../constants/actionTypes.js'
 import boardReducer from './boardReducer.js'
+import { ADD_PIECE, RESET_BOARD, PLAYERS } from '../constants/actionTypes.js'
+const { X, O } = PLAYERS
 
 function checkIfWon(boardState, action) {
   const { position, piece } = action
@@ -8,7 +9,7 @@ function checkIfWon(boardState, action) {
 }
 
 const initialState = {
-  currentPlayer: 'X',
+  currentPlayer: X,
   boardState: boardReducer(undefined, {}),
   gameOver: false
 }
@@ -19,7 +20,7 @@ const gameReducer = (gameState = initialState, action) => {
   switch (action.type) {
     case ADD_PIECE:
     return {
-      currentPlayer: currentPlayer === PLAYERS.X ? PLAYERS.O: PLAYERS.X, // set active player
+      currentPlayer: currentPlayer === X ? O: X, // set active player
       boardState: boardReducer(boardState, action),
       gameOver: checkIfWon(boardState, action)
     }
