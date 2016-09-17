@@ -47,12 +47,11 @@ var placePieces = function(store) {
   return currentCells
 }
 
-export default function App(props) {
+const App = function (props) {
 
   var { store } = props
 
   var pieces = placePieces(store)
-  console.log(pieces)
 
   var style = {
     position: 'relative'
@@ -64,4 +63,8 @@ export default function App(props) {
       {pieces}
     </div>
   )
+}
+
+App.propTypes = {
+  store: React.PropTypes.object.isRequired
 }
