@@ -21,4 +21,8 @@ var GameBoard = function(props) {
   )
 }
 
+GameBoard.propTypes = {
+  scale: React.PropTypes.number.isRequired
+}
+
 export default GameBoard
