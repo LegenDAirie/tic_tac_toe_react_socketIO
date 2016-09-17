@@ -1,6 +1,8 @@
 import React from 'react'
 import GameBoard from './gameBoard'
 import Pieces from './pieces.js'
+import ResetButton from './resetButton'
+
 
 const Game = function ( props ) {
   var state = props.store.getState()
@@ -9,6 +11,7 @@ const Game = function ( props ) {
     <div id="board-container" style={ style }>
       <GameBoard scale={ state.scale }/>
       <Pieces store={ props.store }/>
+      <ResetButton store={ props.store }/>
     </div>
   )
 }
