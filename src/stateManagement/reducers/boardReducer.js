@@ -14,7 +14,7 @@ const boardReducer = (boardState = initialState, action) => {
       var ending = boardState.slice(position+1, boardState.length)
       return [...beginning, piece, ...ending]
     case RESET_BOARD:
-      return ['', '', '', '', '', '', '', '', '']
+      return initialState
     default:
       return boardState
   }
