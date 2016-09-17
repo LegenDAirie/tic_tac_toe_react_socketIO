@@ -1,5 +1,6 @@
 import React from 'react'
 import GameBoard from './gameBoard'
+import Pieces from './pieces.js'
 
 const App = function (props) {
 
@@ -12,7 +13,7 @@ const App = function (props) {
   return (
     <div id="board-container" style={style}>
       <GameBoard/>
-      
+
     </div>
   )
 }
