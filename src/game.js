@@ -12,8 +12,8 @@ var placePieces = function(store) {
   var cellWidth = 100
   var cellHeight = cellWidth
 
-  for (var rowNum = 0 rowNum < 3 rowNum++) {
-    for (var colNum = 0 colNum < 3 colNum++) {
+  for (var rowNum = 0; rowNum < 3; rowNum++) {
+    for (var colNum = 0; colNum < 3; colNum++) {
       var width = scale * cellWidth - 1
       var left = scale * colNum * cellWidth
       var top = scale * rowNum * cellHeight
