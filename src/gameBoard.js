@@ -1,5 +1,5 @@
 import React from 'react'
-import BoardCell from './board_cell'
+import BoardCell from './boardCell'
 
 var GameBoard = function(props) {
   // var { scale } = props

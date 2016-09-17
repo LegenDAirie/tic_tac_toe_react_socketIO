@@ -1,9 +1,9 @@
 import React from 'react'
 // import { merge, each, times } from 'lodash'
-import GameBoard from './game_board'
-import PieceX from './piece_x'
-import PieceO from './piece_o'
-import BoardCell from './board_cell'
+import GameBoard from './gameBoard'
+import PieceX from './pieceX'
+import PieceO from './pieceO'
+import BoardCell from './boardCell'
 
 var placePieces = function(store) {
   var boardCells = store.getState()
