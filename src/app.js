@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import createStore from './stateManagement/createStore'
-import boardReducer from './stateManagement/reducers/boardReducer'
+import appReducer from './stateManagement/reducers/appReducer'
 import Game from './game.js'
 
-var store = createStore(boardReducer)
+var store = createStore(appReducer)
 
 var render = function render() {
   ReactDOM.render(
