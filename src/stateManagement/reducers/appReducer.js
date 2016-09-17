@@ -2,10 +2,11 @@ import { SET_SCALE } from '../constants/actionTypes.js'
 import gameReducer from './gameReducer.js'
 
 const calculateScale = ({ currentScale, action }) => {
-  if (action.type !==  SET_SCALE) {
+  var { type, scale } = action
+  if (type !== SET_SCALE) {
     return currentScale
   }
-  return 1
+  return scale
 }
 
 const initialState = {
