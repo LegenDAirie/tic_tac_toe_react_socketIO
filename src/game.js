@@ -3,10 +3,11 @@ import GameBoard from './gameBoard'
 import Pieces from './pieces.js'
 
 const Game = function ( props ) {
+  var state = props.store.getState()
   var style = { position: 'relative' }
   return (
     <div id="board-container" style={ style }>
-      <GameBoard store={ props.store }/>
+      <GameBoard scale={ state.scale }/>
       <Pieces store={ props.store }/>
     </div>
   )
