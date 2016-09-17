@@ -8,16 +8,13 @@ const boardReducer = (boardState = initialState, action) => {
   switch (type) {
     case ADD_PIECE:
       if ( boardState[position] !== '' ) {
-
         return boardState
       }
-      var beginningArray = boardState.slice(0, position)
-      var endingArray = boardState.slice(position+1, boardState.length)
-      return beginningArray.concat([piece]).concat(endingArray)
-
+      var beginning = boardState.slice(0, position)
+      var ending = boardState.slice(position+1, boardState.length)
+      return [...beginning, piece, ...ending]
     case RESET_BOARD:
       return ['', '', '', '', '', '', '', '', '']
-
     default:
       return boardState
   }
