@@ -5,9 +5,9 @@ The purpose of this project is to demonstrate the fundamentals of react, socketI
 #### Required functionality
 
 * [x] Placing pieces
-* [ ] Switch players
-* [ ] Win condition
-* [ ] Reset Game
+* [X] Switch players
+* [X] Win condition
+* [X] Reset Game
 
 ---
 #### Nice to have functionality
