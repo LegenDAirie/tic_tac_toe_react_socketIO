@@ -19,7 +19,12 @@ var placePieces = function(store) {
       var top = scale * rowNum * cellHeight
       let position = (rowNum*3) + colNum
       var identifier = '' + rowNum + colNum
-
+      var handleCellSelect = function() {
+        store.dispatch(addPiece(position, state.gameState.currentPlayer))
+      }
+      if (state.gameState.gameOver) {
+        handleCellSelect = () => {}
+      }
       var Piece = BoardCell
 
       if ( boardCells[rowNum*3 + colNum] === 'X' ) {
@@ -33,7 +38,7 @@ var placePieces = function(store) {
       currentCells.push(
         <Piece id={identifier} key={identifier} store={store}
           width={width} left={left} top={top}
-          handleCellSelect={() => store.dispatch(addPiece(position, state.gameState.currentPlayer))}
+          handleCellSelect={handleCellSelect}
         />
       )
     }
