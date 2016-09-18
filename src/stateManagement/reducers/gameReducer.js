@@ -3,7 +3,6 @@ import { ADD_PIECE, RESET_BOARD, PLAYERS } from '../actionTypes.js'
 const { X, O } = PLAYERS
 
 function checkIfWon(boardState, action) {
-  const { position, piece } = action
   const newBoard = boardReducer(boardState, action)
   const winningConfigurations = [
     [1, 2, 3],
