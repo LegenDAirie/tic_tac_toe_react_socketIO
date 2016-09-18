@@ -61,4 +61,24 @@ describe('Game Reducer', function() {
       gameReducer(stateBefore, action)
     ).toEqual(stateAfter)
   })
+
+  it('does not skip a players turn when invalid action is dispatched', function() {
+    const stateBefore = {
+      gameOver: false,
+      currentPlayer: 'X',
+      boardState: ['O', '', '', '', '', '', '', '', '']
+    }
+    const action = {
+      type:'ADD_PIECE',
+      piece: 'X',
+      position: 0
+    }
+
+    deepFreeze(stateBefore)
+
+    expect(
+      gameReducer(stateBefore, action)
+    ).toEqual(stateBefore)
+  })
+
 })
