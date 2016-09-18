@@ -81,4 +81,27 @@ describe('Game Reducer', function() {
     ).toEqual(stateBefore)
   })
 
+  it('a piece can not be placed after a player has won', function() {
+    const stateBefore = {
+      gameOver: false,
+      currentPlayer: 'X',
+      boardState: ['O', '', 'X', 'O', 'X', 'X', 'O', '', '']
+    }
+    const stateAfter = {
+      gameOver: false,
+      currentPlayer: 'O',
+      boardState: ['O', '', 'X', 'O', 'X', 'X', 'O', '', '']
+    }
+    const action = {
+      type:'ADD_PIECE',
+      piece: 'X',
+      position: 8
+    }
+
+    deepFreeze(stateBefore)
+
+    expect(
+      gameReducer(stateBefore, action)
+    ).toEqual(stateAfter)
+  })
 })
