@@ -62,7 +62,7 @@ describe('Game Reducer', function() {
     ).toEqual(stateAfter)
   })
 
-  it('does not skip a players turn when invalid action is dispatched', function() {
+  it('does not skip a players turn when the action is invalid', function() {
     const stateBefore = {
       gameOver: false,
       currentPlayer: 'X',
@@ -81,15 +81,10 @@ describe('Game Reducer', function() {
     ).toEqual(stateBefore)
   })
 
-  it('a piece can not be placed after a player has won', function() {
+  it('does not allow adding pieces after the game is over', function() {
     const stateBefore = {
-      gameOver: false,
+      gameOver: true,
       currentPlayer: 'X',
-      boardState: ['O', '', 'X', 'O', 'X', 'X', 'O', '', '']
-    }
-    const stateAfter = {
-      gameOver: false,
-      currentPlayer: 'O',
       boardState: ['O', '', 'X', 'O', 'X', 'X', 'O', '', '']
     }
     const action = {
@@ -102,6 +97,27 @@ describe('Game Reducer', function() {
 
     expect(
       gameReducer(stateBefore, action)
+    ).toEqual(stateBefore)
+  })
+
+  it('allows resetting the board after the game is over', function() {
+    const stateBefore = {
+      gameOver: true,
+      currentPlayer: 'X',
+      boardState: ['O', '', 'X', 'O', 'X', 'X', 'O', '', '']
+    }
+    const stateAfter = {
+      gameOver: false,
+      currentPlayer: 'X',
+      boardState: ['', '', '', '', '', '', '', '', '']
+    }
+    const action = { type:'RESET_BOARD' }
+
+    deepFreeze(stateBefore)
+
+    expect(
+      gameReducer(stateBefore, action)
     ).toEqual(stateAfter)
   })
+
 })

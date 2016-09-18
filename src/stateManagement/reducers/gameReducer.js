@@ -36,10 +36,11 @@ const initialState = {
 }
 
 const gameReducer = (gameState = initialState, action) => {
-  const { boardState, currentPlayer } = gameState
+  const { boardState, currentPlayer, gameOver } = gameState
 
   switch (action.type) {
     case ADD_PIECE:
+      if (!gameOver) {return gameState}
     return {
       currentPlayer: currentPlayer === X ? O: X, // set active player
       boardState: boardReducer(boardState, action),
