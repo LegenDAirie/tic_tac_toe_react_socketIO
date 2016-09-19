@@ -22,4 +22,22 @@ describe('App Reducer', function() {
     ).toEqual(stateAfter)
   })
 
+  it('passes back the same state if given an invalid action', function() {
+    const stateBefore = {
+      scale: 1,
+      gameState: {
+        currentPlayer: 'O',
+        boardState: ['', 'X', 'O', '', '', 'O', '', '', 'X'],
+        gameOver: false
+      }
+    }
+    const action = {}
+    deepFreeze(action)
+    deepFreeze(stateBefore)
+
+    expect(
+      appReducer(stateBefore, action)
+    ).toEqual(stateBefore)
+  })
+
 })
