@@ -1,5 +1,5 @@
 import React from 'react'
-import GameBoard from './gameBoard'
+import GameBoard from './grid'
 import Pieces from './pieces.js'
 import ResetButton from './resetButton'
 
