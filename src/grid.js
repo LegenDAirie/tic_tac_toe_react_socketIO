@@ -1,6 +1,6 @@
 import React from 'react'
 
-var GameBoard = function(props) {
+var Grid = function(props) {
   var height = 300 * props.scale
   var style = {
     height: height + 'px',
@@ -21,8 +21,8 @@ var GameBoard = function(props) {
   )
 }
 
-GameBoard.propTypes = {
+Grid.propTypes = {
   scale: React.PropTypes.number.isRequired
 }
 
-export default GameBoard
+export default Grid
