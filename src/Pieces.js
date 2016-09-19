@@ -8,7 +8,7 @@ var placePieces = function(store) {
   var state = store.getState()
   var boardCells = state.gameState.boardState
   var currentCells = []
-  var scale = 1
+  var scale = state.scale
   var cellWidth = 100
   var cellHeight = cellWidth
 
