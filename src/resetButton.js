@@ -12,4 +12,8 @@ const ResetButton = props => (
   </div>
 )
 
+ResetButton.propTypes = {
+  store: React.PropTypes.object.isRequired
+}
+
 export default ResetButton
