@@ -3,7 +3,6 @@ import GameBoard from './gameBoard'
 import Pieces from './pieces.js'
 import ResetButton from './resetButton'
 
-
 const Game = function ( props ) {
   var state = props.store.getState()
   var style = { position: 'relative' }

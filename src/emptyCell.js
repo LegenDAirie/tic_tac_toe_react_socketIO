@@ -12,7 +12,6 @@ var EmptyCell = function(props) {
     position: 'absolute'
   }
 
-
   return (
     <div style={style} onClick={handleCellSelect}>
     </div>

@@ -47,7 +47,6 @@ var placePieces = function(store) {
   return currentCells
 }
 
-
 const Pieces = props => {
   var pieces = placePieces(props.store)
   return (
