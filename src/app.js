@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import createStore from './stateManagement/createStore'
 import appReducer from './stateManagement/reducers/appReducer'
-import Game from './game.js'
+import Game from './game'
 import { setScale } from './stateManagement/actionTypes'
 
 var store = createStore(appReducer)

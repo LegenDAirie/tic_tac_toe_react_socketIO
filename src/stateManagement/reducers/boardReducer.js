@@ -1,4 +1,4 @@
-import { ADD_PIECE, RESET_BOARD } from '../actionTypes.js'
+import { ADD_PIECE, RESET_BOARD } from '../actionTypes'
 
 const initialState = ['', '', '', '', '', '', '', '', '']
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import GameBoard from './grid'
-import Pieces from './pieces.js'
+import Pieces from './pieces'
 import ResetButton from './resetButton'
 
 const Game = function ( props ) {

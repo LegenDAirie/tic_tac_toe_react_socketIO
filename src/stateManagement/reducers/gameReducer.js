@@ -1,5 +1,5 @@
-import boardReducer from './boardReducer.js'
-import { ADD_PIECE, RESET_BOARD, PLAYERS } from '../actionTypes.js'
+import boardReducer from './boardReducer'
+import { ADD_PIECE, RESET_BOARD, PLAYERS } from '../actionTypes'
 const { X, O } = PLAYERS
 
 function checkIfWon(boardState, action) {
