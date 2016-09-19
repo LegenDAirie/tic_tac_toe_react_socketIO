@@ -1,8 +1,7 @@
 import React from 'react'
 
 var PieceX = function(props) {
-
-  var { width, left, top, handleCellSelect, id } = props
+  var { width, left, top } = props
 
   var style = {
     height: width + 'px',
@@ -23,6 +22,12 @@ var PieceX = function(props) {
       </g>
     </svg>
   )
+}
+
+PieceX.propTypes = {
+  width: React.PropTypes.number.isRequired,
+  left: React.PropTypes.number.isRequired,
+  top: React.PropTypes.number.isRequired
 }
 
 export default PieceX

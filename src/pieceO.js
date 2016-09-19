@@ -21,6 +21,10 @@ var PieceO = function (props) {
   )
 }
 
-
+PieceO.propTypes = {
+  width: React.PropTypes.number.isRequired,
+  left: React.PropTypes.number.isRequired,
+  top: React.PropTypes.number.isRequired
+}
 
 export default PieceO

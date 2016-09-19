@@ -57,4 +57,8 @@ const Pieces = props => {
   )
 }
 
+Pieces.propTypes = {
+  store: React.PropTypes.object.isRequired
+}
+
 export default Pieces
