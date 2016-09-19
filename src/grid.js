@@ -1,7 +1,7 @@
 import React from 'react'
 
 var Grid = function(props) {
-  var height = 300 * props.scale
+  var height = props.scale * 300 //Initial grid size
   var style = {
     height: height + 'px',
     position: 'absolute'
