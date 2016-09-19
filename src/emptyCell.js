@@ -1,6 +1,6 @@
 import React from 'react'
 
-var BoardCell = function(props) {
+var EmptyCell = function(props) {
   var { width, left, top, handleCellSelect } = props
 
   var style = {
@@ -19,11 +19,11 @@ var BoardCell = function(props) {
   )
 }
 
-BoardCell.propTypes = {
+EmptyCell.propTypes = {
   width: React.PropTypes.number.isRequired,
   left: React.PropTypes.number.isRequired,
   top: React.PropTypes.number.isRequired,
   handleCellSelect: React.PropTypes.func.isRequired
 }
 
-export default BoardCell
+export default EmptyCell

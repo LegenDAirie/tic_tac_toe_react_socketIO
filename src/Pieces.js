@@ -1,7 +1,7 @@
 import React from 'react'
 import PieceX from './pieceX'
 import PieceO from './pieceO'
-import BoardCell from './boardCell'
+import BoardCell from './emptyCell'
 import { addPiece } from './stateManagement/actionTypes'
 
 var placePieces = function(store) {
