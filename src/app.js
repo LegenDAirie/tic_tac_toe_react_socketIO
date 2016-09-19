@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import createStore from './stateManagement/createStore'
 import appReducer from './stateManagement/reducers/appReducer'
 import Game from './game.js'
+import { setScale } from './stateManagement/actionTypes'
 
 var store = createStore(appReducer)
 
@@ -15,3 +16,8 @@ var render = function render() {
 
 store.subscribe(render)
 render()
+
+window.addEventListener('resize', function() {
+
+  store.dispatch(setScale(1))
+})
