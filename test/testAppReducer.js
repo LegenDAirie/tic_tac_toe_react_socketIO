@@ -40,4 +40,33 @@ describe('App Reducer', function() {
     ).toEqual(stateBefore)
   })
 
+  it('updates the scale', function() {
+    const stateBefore = {
+      scale: 1,
+      gameState: {
+        currentPlayer: 'O',
+        boardState: ['', 'X', 'O', '', '', 'O', '', '', 'X'],
+        gameOver: false
+      }
+    }
+    const stateAfter = {
+      scale: 2,
+      gameState: {
+        currentPlayer: 'O',
+        boardState: ['', 'X', 'O', '', '', 'O', '', '', 'X'],
+        gameOver: false
+      }
+    }
+    const action = {
+      type: 'SET_SCALE',
+      scale: 2
+    }
+    deepFreeze(action)
+    deepFreeze(stateBefore)
+
+    expect(
+      appReducer(stateBefore, action)
+    ).toEqual(stateAfter)
+  })
+
 })
