@@ -30,7 +30,6 @@ describe('Game Reducer', function() {
       boardState: ['', '', '', 'O', '', '', '', '', '']
     }
     const action = {}
-
     deepFreeze(stateBefore)
 
     expect(
@@ -54,7 +53,7 @@ describe('Game Reducer', function() {
       piece: 'X',
       position: 0
     }
-
+    deepFreeze(action)
     deepFreeze(stateBefore)
 
     expect(
@@ -73,7 +72,7 @@ describe('Game Reducer', function() {
       piece: 'X',
       position: 0
     }
-
+    deepFreeze(action)
     deepFreeze(stateBefore)
 
     expect(
@@ -92,7 +91,7 @@ describe('Game Reducer', function() {
       piece: 'X',
       position: 8
     }
-
+    deepFreeze(action)
     deepFreeze(stateBefore)
 
     expect(
@@ -112,7 +111,7 @@ describe('Game Reducer', function() {
       boardState: ['', '', '', '', '', '', '', '', '']
     }
     const action = { type:'RESET_BOARD' }
-
+    deepFreeze(action)
     deepFreeze(stateBefore)
 
     expect(
