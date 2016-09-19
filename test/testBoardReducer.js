@@ -34,6 +34,7 @@ describe('Board Reducer', function() {
       position: 0
     };
     deepFreeze(stateBefore);
+    deepFreeze(action);
 
     expect(
       boardReducer(stateBefore, action)
@@ -50,6 +51,7 @@ describe('Board Reducer', function() {
       position: 0
     };
     deepFreeze(stateBefore);
+    deepFreeze(action);
 
     expect(
       boardReducer(stateBefore, action)
@@ -63,6 +65,7 @@ describe('Board Reducer', function() {
       type:'RESET_BOARD'
     };
     deepFreeze(stateBefore);
+    deepFreeze(action);
 
     expect(
       boardReducer(stateBefore, action)
