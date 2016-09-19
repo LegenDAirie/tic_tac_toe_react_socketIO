@@ -69,4 +69,33 @@ describe('App Reducer', function() {
     ).toEqual(stateAfter)
   })
 
+  it('only returns a scale larger then zero', function() {
+    const stateBefore = {
+      scale: 1,
+      gameState: {
+        currentPlayer: 'O',
+        boardState: ['', 'X', 'O', '', '', 'O', '', '', 'X'],
+        gameOver: false
+      }
+    }
+    const stateAfter = {
+      scale: 0.1,
+      gameState: {
+        currentPlayer: 'O',
+        boardState: ['', 'X', 'O', '', '', 'O', '', '', 'X'],
+        gameOver: false
+      }
+    }
+    const action = {
+      type: 'SET_SCALE',
+      scale: 0
+    }
+    deepFreeze(action)
+    deepFreeze(stateBefore)
+
+    expect(
+      appReducer(stateBefore, action)
+    ).toEqual(stateAfter)
+  })
+
 })
