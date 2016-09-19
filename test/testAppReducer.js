@@ -15,8 +15,8 @@ describe('App Reducer', function() {
         gameOver: false
       }
     }
-
     deepFreeze(action)
+
     expect(
       appReducer(stateBefore, action)
     ).toEqual(stateAfter)
