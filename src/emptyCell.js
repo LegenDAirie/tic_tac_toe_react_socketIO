@@ -9,7 +9,7 @@ var EmptyCell = function(props) {
     left: left + 'px',
     top: top + 'px',
     backgroundColor: '#555',
-    position:'absolute'
+    position: 'absolute'
   }
 
 

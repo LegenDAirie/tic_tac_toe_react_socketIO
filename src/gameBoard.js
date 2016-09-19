@@ -4,7 +4,7 @@ var GameBoard = function(props) {
   var height = 300 * props.scale
   var style = {
     height: height + 'px',
-    position:'absolute'
+    position: 'absolute'
   }
   return (
     <div>
