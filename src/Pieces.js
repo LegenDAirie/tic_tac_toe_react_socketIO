@@ -36,7 +36,7 @@ var placePieces = function(store) {
       }
 
       currentCells.push(
-        <Piece id={identifier} key={identifier} store={store}
+        <Piece key={identifier} store={store}
           width={width} left={left} top={top}
           handleCellSelect={handleCellSelect}
         />

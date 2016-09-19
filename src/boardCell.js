@@ -14,7 +14,7 @@ var BoardCell = function(props) {
 
 
   return (
-    <div id={id} style={style} onClick={handleCellSelect}>
+    <div style={style} onClick={handleCellSelect}>
     </div>
   )
 }
