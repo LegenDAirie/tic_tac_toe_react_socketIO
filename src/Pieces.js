@@ -1,7 +1,7 @@
 import React from 'react'
 import PieceX from './pieceX'
 import PieceO from './pieceO'
-import BoardCell from './emptyCell'
+import EmptyCell from './emptyCell'
 import { addPiece } from './stateManagement/actionTypes'
 
 var placePieces = function(store) {
@@ -25,7 +25,7 @@ var placePieces = function(store) {
       if (state.gameState.gameOver) {
         handleCellSelect = () => {}
       }
-      var Piece = BoardCell
+      var Piece = EmptyCell
 
       if ( boardCells[rowNum*3 + colNum] === 'X' ) {
         Piece = PieceX
