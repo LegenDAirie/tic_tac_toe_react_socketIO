@@ -6,7 +6,7 @@ const getScale = ({ currentScale, action }) => {
   if (type !== SET_SCALE) {
     return currentScale
   }
-  return scale
+  return Math.max(scale, 0.1)
 }
 
 const initialState = {
