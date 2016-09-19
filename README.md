@@ -5,14 +5,14 @@ The purpose of this project is to demonstrate the fundamentals of react, socketI
 #### Required functionality
 
 * [x] Placing pieces
-* [X] Switch players
-* [X] Win condition
-* [X] Reset Game
+* [x] Switch players
+* [x] Win condition
+* [x] Reset Game
 
 ---
 #### Nice to have functionality
 * [ ] Score
 * [ ] WebSockets
-* [ ] Responsive to browser size
+* [x] Responsive to browser size
 * [ ] Chat feature
 * [ ] Spectator mode
