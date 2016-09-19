@@ -18,6 +18,7 @@ store.subscribe(render)
 render()
 
 window.addEventListener('resize', function() {
-
-  store.dispatch(setScale(1))
+  var heightNeeded = window.innerHeight * 0.8
+  var newScale = heightNeeded / 300
+  store.dispatch(setScale(newScale))
 })
