@@ -1,22 +1,22 @@
-import { SET_SCALE } from '../actionTypes'
+import { SET_gameSize } from '../actionTypes'
 import gameReducer from './gameReducer'
 
-const getScale = ({ currentScale, action }) => {
-  var { type, scale } = action
-  if (type !== SET_SCALE) {
-    return currentScale
+const getgameSize = ({ currentgameSize, action }) => {
+  var { type, gameSize } = action
+  if (type !== SET_gameSize) {
+    return currentgameSize
   }
-  return Math.max(scale, 0.1)
+  return Math.max(gameSize, 0.1)
 }
 
 const initialState = {
-  scale: 1,
+  gameSize: 1,
   gameState: gameReducer(undefined, {})
 }
 
 const appReducer = (state = initialState, action) => {
   return {
-    scale: getScale({ currentScale: state.scale, action }),
+    gameSize: getgameSize({ currentgameSize: state.gameSize, action }),
     gameState: gameReducer(state.gameState, action)
   }
 }

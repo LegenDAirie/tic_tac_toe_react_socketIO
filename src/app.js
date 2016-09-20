@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import createStore from './stateManagement/createStore'
 import appReducer from './stateManagement/reducers/appReducer'
 import Game from './game'
-import { setScale } from './stateManagement/actionTypes'
+import { setgameSize } from './stateManagement/actionTypes'
 
 var store = createStore(appReducer)
 
@@ -14,13 +14,9 @@ var render = function render() {
   )
 }
 
-var setAppScale = function() {
-  var heightNeeded = window.innerHeight * 0.8
-  var newScale = heightNeeded / 300 //height on the game grid
-  store.dispatch(setScale(newScale))
-}
+var setGameSize = () => store.dispatch(setgameSize(window.innerHeight * 0.8))
 
 store.subscribe(render)
-setAppScale()
+setGameSize()
 
-window.addEventListener('resize', setAppScale)
+window.addEventListener('resize', setGameSize)

@@ -1,7 +1,7 @@
 import React from 'react'
 
 var Grid = function(props) {
-  var height = props.scale * 300 //Initial grid size
+  var height = props.gameSize
   var style = {
     height: height + 'px',
     position: 'absolute'
@@ -22,7 +22,7 @@ var Grid = function(props) {
 }
 
 Grid.propTypes = {
-  scale: React.PropTypes.number.isRequired
+  gameSize: React.PropTypes.number.isRequired
 }
 
 export default Grid

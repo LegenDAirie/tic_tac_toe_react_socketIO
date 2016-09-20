@@ -8,7 +8,7 @@ describe('App Reducer', function() {
     const stateBefore = undefined
     const action = {}
     const stateAfter = {
-      scale: 1,
+      gameSize: 1,
       gameState: {
         currentPlayer: 'X',
         boardState: ['', '', '', '', '', '', '', '', ''],
@@ -24,7 +24,7 @@ describe('App Reducer', function() {
 
   it('passes back the same state if given an invalid action', function() {
     const stateBefore = {
-      scale: 1,
+      gameSize: 1,
       gameState: {
         currentPlayer: 'O',
         boardState: ['', 'X', 'O', '', '', 'O', '', '', 'X'],
@@ -40,9 +40,9 @@ describe('App Reducer', function() {
     ).toEqual(stateBefore)
   })
 
-  it('updates the scale', function() {
+  it('updates the gameSize', function() {
     const stateBefore = {
-      scale: 1,
+      gameSize: 1,
       gameState: {
         currentPlayer: 'O',
         boardState: ['', 'X', 'O', '', '', 'O', '', '', 'X'],
@@ -50,7 +50,7 @@ describe('App Reducer', function() {
       }
     }
     const stateAfter = {
-      scale: 2,
+      gameSize: 2,
       gameState: {
         currentPlayer: 'O',
         boardState: ['', 'X', 'O', '', '', 'O', '', '', 'X'],
@@ -58,8 +58,8 @@ describe('App Reducer', function() {
       }
     }
     const action = {
-      type: 'SET_SCALE',
-      scale: 2
+      type: 'SET_gameSize',
+      gameSize: 2
     }
     deepFreeze(action)
     deepFreeze(stateBefore)
@@ -69,9 +69,9 @@ describe('App Reducer', function() {
     ).toEqual(stateAfter)
   })
 
-  it('only returns a scale larger then zero', function() {
+  it('only returns a gameSize larger then zero', function() {
     const stateBefore = {
-      scale: 1,
+      gameSize: 1,
       gameState: {
         currentPlayer: 'O',
         boardState: ['', 'X', 'O', '', '', 'O', '', '', 'X'],
@@ -79,7 +79,7 @@ describe('App Reducer', function() {
       }
     }
     const stateAfter = {
-      scale: 0.1,
+      gameSize: 0.1,
       gameState: {
         currentPlayer: 'O',
         boardState: ['', 'X', 'O', '', '', 'O', '', '', 'X'],
@@ -87,8 +87,8 @@ describe('App Reducer', function() {
       }
     }
     const action = {
-      type: 'SET_SCALE',
-      scale: 0
+      type: 'SET_gameSize',
+      gameSize: 0
     }
     deepFreeze(action)
     deepFreeze(stateBefore)

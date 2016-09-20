@@ -3,7 +3,7 @@
 #### Example state structure
 ```javascript
 var exampleAppState = {
-  scale: 1,
+  gameSize: 1,
   gameState: {
     gameOver: false,
     currentPlayer: 'X',
@@ -16,7 +16,7 @@ var exampleAppState = {
 ```javascript
 function appStateReducer(state = {}, action) {
   return {
-    scale: calculateScale(state.scale, action),
+    gameSize: calculategameSize(state.gameSize, action),
     gameState: gameStateReducer(state.gameState, action)
   }
 }
@@ -54,11 +54,11 @@ function boardStateReducer(boardState, action) {
 ---
 #### Helper functions
 ```javascript
-function calculateScale( origionalScale, action ) {
-  if ('the action is about changing the scale then') {
-    return newScale
+function calculategameSize( origionalgameSize, action ) {
+  if ('the action is about changing the gameSize then') {
+    return newgameSize
   }
-  return origionalScale
+  return origionalgameSize
 }
 
 function isGameOver(boardState, action) {
