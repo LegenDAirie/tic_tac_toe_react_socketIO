@@ -5,7 +5,7 @@ import EmptyCell from './emptyCell'
 import { addPiece } from './stateManagement/actionTypes'
 
 
-var placePieces = function(store) {
+var getPieces = function(store) {
   var state = store.getState()
   var boardCells = state.gameState.boardState
   var currentCells = []
@@ -47,4 +47,4 @@ var placePieces = function(store) {
   return currentCells
 }
 
-export default placePieces
+export default getPieces
