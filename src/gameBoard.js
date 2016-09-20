@@ -8,7 +8,7 @@ const GameBoard = props => {
     position: 'relative'
   }
   return (
-    <div style={style}>
+    <div style={ style }>
       <Grid scale={ state.scale }/>
       <Pieces store={ props.store }/>
     </div>
