@@ -36,9 +36,9 @@ var placePieces = function(store) {
       }
 
       currentCells.push(
-        <Piece key={identifier} store={store}
-          width={width} left={left} top={top}
-          handleCellSelect={handleCellSelect}
+        <Piece key={ identifier } store={ store }
+          width={ width } left={ left } top={ top }
+          handleCellSelect={ handleCellSelect }
         />
       )
     }
@@ -51,7 +51,7 @@ const Pieces = props => {
   var pieces = placePieces(props.store)
   return (
     <div>
-      {pieces}
+      { pieces }
     </div>
   )
 }

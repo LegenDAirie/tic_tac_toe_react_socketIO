@@ -13,7 +13,7 @@ var EmptyCell = function(props) {
   }
 
   return (
-    <div style={style} onClick={handleCellSelect}>
+    <div style={ style } onClick={ handleCellSelect }>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 const CurrentPlayer = props => {
   return (
-    <div style={{}}>CurrentPlayer: {props.currentPlayer}</div>
+    <div>CurrentPlayer: { props.currentPlayer }</div>
   )
 }
 

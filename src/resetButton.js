@@ -3,7 +3,7 @@ import { resetBoard } from './stateManagement/actionTypes'
 
 const ResetButton = props => (
   <div>
-    <button onClick={() => props.store.dispatch(resetBoard())}>
+    <button onClick={ () => props.store.dispatch(resetBoard()) }>
       ResetGame
     </button>
   </div>

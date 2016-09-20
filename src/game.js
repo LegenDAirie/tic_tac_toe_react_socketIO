@@ -9,7 +9,7 @@ const Game = function ( props ) {
   return (
     <div id="board-container" style={ style }>
       <ResetButton store={ props.store } />
-      <CurrentPlayer currentPlayer={state.gameState.currentPlayer} />
+      <CurrentPlayer currentPlayer={ state.gameState.currentPlayer } />
       <GameBoard store={ props.store } />
     </div>
   )

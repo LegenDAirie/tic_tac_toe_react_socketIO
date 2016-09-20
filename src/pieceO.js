@@ -12,7 +12,7 @@ var PieceO = function (props) {
   }
 
   return (
-    <svg style={style} viewBox='0 0 100 100'>
+    <svg style={ style } viewBox='0 0 100 100'>
       <title>
         Circle
       </title>
