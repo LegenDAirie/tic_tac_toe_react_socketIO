@@ -14,7 +14,7 @@ var getPieces = function(store) {
 
   for (var rowNum = 0; rowNum < 3; rowNum++) {
     for (var colNum = 0; colNum < 3; colNum++) {
-      var width = cellSize - 1
+      var width = cellSize
       var left = cellSize * colNum
       var top = cellSize * rowNum
       let position = (rowNum*3) + colNum
@@ -36,11 +36,12 @@ var getPieces = function(store) {
       }
 
       var style = {
-        height: width + 'px',
         width: width + 'px',
+        height: width + 'px',
         left: left + 'px',
         top: top + 'px',
-        position: 'absolute'
+        position: 'absolute',
+        backgroundColor: 'rgba(50, 50, 50, .25)'
       }
 
       currentCells.push(
