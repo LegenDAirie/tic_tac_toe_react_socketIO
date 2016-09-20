@@ -9,14 +9,13 @@ var placePieces = function(store) {
   var boardCells = state.gameState.boardState
   var currentCells = []
   var gameSize = state.gameSize
-  var cellWidth = 100
-  var cellHeight = cellWidth
+  var cellSize = gameSize / 3
 
   for (var rowNum = 0; rowNum < 3; rowNum++) {
     for (var colNum = 0; colNum < 3; colNum++) {
-      var width = gameSize * cellWidth - 1
-      var left = gameSize * colNum * cellWidth
-      var top = gameSize * rowNum * cellHeight
+      var width = cellSize - 1
+      var left = cellSize * colNum
+      var top = cellSize * rowNum
       let position = (rowNum*3) + colNum
       var identifier = '' + rowNum + colNum
       var handleCellSelect = function() {
@@ -27,11 +26,11 @@ var placePieces = function(store) {
       }
       var Piece = EmptyCell
 
-      if ( boardCells[rowNum*3 + colNum] === 'X' ) {
+      if ( boardCells[rowNum * 3 + colNum] === 'X' ) {
         Piece = PieceX
       }
 
-      if ( boardCells[rowNum*3 + colNum] === 'O' ) {
+      if ( boardCells[rowNum * 3 + colNum] === 'O' ) {
         Piece = PieceO
       }
 

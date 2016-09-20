@@ -10,11 +10,11 @@ const GameBoard = props => {
   return (
     <div style={ style }>
       <Grid gameSize={ state.gameSize }/>
+      <Pieces store={ props.store }/>
     </div>
   )
 }
 
-// <Pieces store={ props.store }/>
 GameBoard.propTypes = {
   store: React.PropTypes.object.isRequired
 }
