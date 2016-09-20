@@ -35,9 +35,16 @@ var getPieces = function(store) {
         Piece = PieceO
       }
 
+      var style = {
+        height: width + 'px',
+        width: width + 'px',
+        left: left + 'px',
+        top: top + 'px',
+        position: 'absolute'
+      }
+
       currentCells.push(
-        <Piece key={ identifier } store={ store }
-          width={ width } left={ left } top={ top }
+        <Piece key={ identifier } style={ style }
           handleCellSelect={ handleCellSelect }
         />
       )

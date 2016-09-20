@@ -1,15 +1,7 @@
 import React from 'react'
 
 var PieceO = function (props) {
-  var { width, left, top} = props
-
-  var style = {
-    height: width + 'px',
-    width: width + 'px',
-    left: left + 'px',
-    top: top + 'px',
-    position: 'absolute'
-  }
+  var { style } = props
 
   return (
     <svg style={ style } viewBox='0 0 100 100'>
@@ -22,9 +14,7 @@ var PieceO = function (props) {
 }
 
 PieceO.propTypes = {
-  width: React.PropTypes.number.isRequired,
-  left: React.PropTypes.number.isRequired,
-  top: React.PropTypes.number.isRequired
+  style: React.PropTypes.object.isRequired,
 }
 
 export default PieceO
