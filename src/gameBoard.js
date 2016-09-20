@@ -12,4 +12,8 @@ const GameBoard = props => {
   )
 }
 
+GameBoard.propTypes = {
+  store: React.PropTypes.object.isRequired
+}
+
 export default GameBoard
