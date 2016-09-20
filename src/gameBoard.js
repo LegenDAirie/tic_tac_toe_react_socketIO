@@ -1,6 +1,6 @@
 import React from 'react'
 import Grid from './grid'
-import Pieces from './pieces'
+import placePieces from './piecePositionLogic'
 
 const GameBoard = props => {
   var state = props.store.getState()
@@ -10,7 +10,7 @@ const GameBoard = props => {
   return (
     <div style={ style }>
       <Grid gameSize={ state.gameSize }/>
-      <Pieces store={ props.store }/>
+      { placePieces(props.store) }
     </div>
   )
 }
