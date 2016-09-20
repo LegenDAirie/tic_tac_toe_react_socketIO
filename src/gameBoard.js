@@ -4,8 +4,11 @@ import Pieces from './pieces'
 
 const GameBoard = props => {
   var state = props.store.getState()
+  var style = {
+    position: 'relative'
+  }
   return (
-    <div>
+    <div style={style}>
       <Grid scale={ state.scale }/>
       <Pieces store={ props.store }/>
     </div>
