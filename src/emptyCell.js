@@ -1,13 +1,8 @@
 import React from 'react'
 
-var EmptyCell = function(props) {
-  var { style, handleCellSelect } = props
-
-  return (
-    <div style={ style } onClick={ handleCellSelect }>
-    </div>
-  )
-}
+var EmptyCell = props => (
+  <div style={ props.style } onClick={ props.handleCellSelect }></div>
+)
 
 EmptyCell.propTypes = {
   style: React.PropTypes.object.isRequired,
