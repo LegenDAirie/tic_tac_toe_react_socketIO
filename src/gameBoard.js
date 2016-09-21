@@ -4,9 +4,6 @@ import getPieces from './piecePositionLogic'
 
 const GameBoard = props => {
   var state = props.store.getState()
-  // var style = {
-  //   position: 'relative'
-  // }
   var style = {
     background: '#9b8',
     height: '85%',
@@ -17,12 +14,12 @@ const GameBoard = props => {
     maxWidth: '80.75vh',
     maxHeight: '80.75vh',
     flexWrap: 'wrap',
-    alignContent: 'center'
+    alignContent: 'flex-start',
   }
 
-  // <Grid gameSize={ state.gameSize }/>
   return (
     <div style={ style }>
+      <Grid gameSize={ state.gameSize }/>
       { getPieces(props.store) }
     </div>
   )

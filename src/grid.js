@@ -2,16 +2,14 @@ import React from 'react'
 
 var Grid = function(props) {
   var height = props.gameSize
-  // var style = {
-  //   height: height + 'px',
-  //   position: 'absolute'
-  // }
   var style = {
-    height: '100%',
+    height: '45vw',
     width: '45vw',
-    minHeight: '300px',
+    maxWidth: '80.75vh',
+    maxHeight: '80.75vh',
     minWidth: '300px',
-    // position: 'absolute'
+    minHeight: '300px',
+    position: 'absolute',
   }
   return (
     <div>

@@ -3,8 +3,9 @@ import React from 'react'
 const CurrentPlayer = props => {
   var style = {
     backgroundColor: '#9b1',
-    fontSize: '2vmax',
-    color: '#333'
+    color: 'white',
+    maxHeight: '14.25vh',
+    fontSize: '5vmin',
   }
 
   return (

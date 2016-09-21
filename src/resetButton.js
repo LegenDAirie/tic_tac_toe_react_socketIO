@@ -5,8 +5,13 @@ var style = {
   backgroundColor: '#f55',
   color: 'white',
   border: 'none',
-  fontSize: '2vmax',
-  padding: '15px'
+  minHeight: '50px',
+  // minWidth: '150px',
+  maxHeight: '14.25vh',
+  fontSize: '5vmin',
+  // width: '15vw',
+  borderRadius: '5',
+  padding: '0 15px'
 }
 
 const ResetButton = props => (
