@@ -10,7 +10,7 @@ const GameBoard = props => {
   var style = {
     background: '#9b8',
     height: '85%',
-    width: '100%',
+    width: '45vw',
     display: 'flex',
     minWidth: '300px'
 

@@ -5,8 +5,8 @@ var style = {
   backgroundColor: '#f55',
   color: 'white',
   border: 'none',
-  fontSize: '24px',
-  padding: '15px',
+  fontSize: '2vmax',
+  padding: '15px'
 }
 
 const ResetButton = props => (

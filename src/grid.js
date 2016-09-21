@@ -8,7 +8,9 @@ var Grid = function(props) {
   // }
   var style = {
     height: '100%',
-    width: '100%'
+    width: '45vw',
+    minHeight: '300px',
+    minWidth: '300px',
   }
   return (
     <div>

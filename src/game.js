@@ -19,11 +19,10 @@ const Game = function ( props ) {
 
   var optionsStyle = {
     display: 'flex',
-    // flexDirection: 'row',
     backgroundColor: '#913',
     justifyContent: 'space-around',
     alignItems: 'center',
-    minHeight: '50px'
+    minHeight: '50px',
   }
 
   return (
