@@ -12,18 +12,21 @@ const GameBoard = props => {
     height: '85%',
     width: '45vw',
     display: 'flex',
-    minWidth: '300px'
-
-
-
+    minWidth: '300px',
+    minHeight: '300px',
+    maxWidth: '80.75vh',
+    maxHeight: '80.75vh',
+    flexWrap: 'wrap',
+    alignContent: 'center'
   }
+
+  // <Grid gameSize={ state.gameSize }/>
   return (
     <div style={ style }>
-      <Grid gameSize={ state.gameSize }/>
+      { getPieces(props.store) }
     </div>
   )
 }
-// { getPieces(props.store) }
 
 GameBoard.propTypes = {
   store: React.PropTypes.object.isRequired

@@ -11,6 +11,7 @@ var Grid = function(props) {
     width: '45vw',
     minHeight: '300px',
     minWidth: '300px',
+    // position: 'absolute'
   }
   return (
     <div>

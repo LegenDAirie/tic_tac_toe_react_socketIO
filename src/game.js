@@ -14,7 +14,8 @@ const Game = function ( props ) {
     flexDirection: 'column',
     minHeight: '350px',
     minWidth: '300px',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    alignItems: 'center'
   }
 
   var optionsStyle = {

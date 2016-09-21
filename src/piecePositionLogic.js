@@ -35,12 +35,26 @@ var getPieces = function(store) {
         Piece = PieceO
       }
 
+      // var style = {
+      //   width: width + 'px',
+      //   height: width + 'px',
+      //   left: left + 'px',
+      //   top: top + 'px',
+      //   position: 'absolute',
+      //   backgroundColor: 'rgba(50, 50, 50, .25)'
+      // }
       var style = {
-        width: width + 'px',
-        height: width + 'px',
-        left: left + 'px',
-        top: top + 'px',
-        position: 'absolute',
+        // width: '15vw',
+        // height: '50px',
+        // zIndex: '1',
+        boxSizing: 'border-box',
+        border: '1px black solid',
+        minWidth: '100px',
+        minHeight: '100px',
+        maxWidth: '26.9166667vh',
+        maxHeight: '26.9166667vh',
+        height: '15vw',
+        flexBasis: '15vw',
         backgroundColor: 'rgba(50, 50, 50, .25)'
       }
 
