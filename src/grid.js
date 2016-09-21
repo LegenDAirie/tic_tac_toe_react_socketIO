@@ -7,6 +7,8 @@ var Grid = function(props) {
   //   position: 'absolute'
   // }
   var style = {
+    height: '100%',
+    width: '100%'
   }
   return (
     <div>

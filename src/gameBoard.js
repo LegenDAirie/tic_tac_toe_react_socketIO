@@ -8,6 +8,14 @@ const GameBoard = props => {
   //   position: 'relative'
   // }
   var style = {
+    background: '#9b8',
+    height: '85%',
+    width: '100%',
+    display: 'flex',
+    minWidth: '300px'
+
+
+
   }
   return (
     <div style={ style }>

@@ -1,8 +1,14 @@
 import React from 'react'
 
 const CurrentPlayer = props => {
+  var style = {
+    backgroundColor: '#9b1',
+    fontSize: '28px',
+    color: '#333'
+  }
+
   return (
-    <div style={ {backgroundColor: '#9b1'} }>CurrentPlayer: { props.currentPlayer }</div>
+    <div style={ style }>CurrentPlayer: { props.currentPlayer }</div>
   )
 }
 
