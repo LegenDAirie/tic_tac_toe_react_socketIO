@@ -2,7 +2,7 @@ import React from 'react'
 
 const CurrentPlayer = props => {
   return (
-    <div>CurrentPlayer: { props.currentPlayer }</div>
+    <div style={ {backgroundColor: '#9b1'} }>CurrentPlayer: { props.currentPlayer }</div>
   )
 }
 

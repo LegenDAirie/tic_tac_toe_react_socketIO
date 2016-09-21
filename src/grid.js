@@ -2,9 +2,11 @@ import React from 'react'
 
 var Grid = function(props) {
   var height = props.gameSize
+  // var style = {
+  //   height: height + 'px',
+  //   position: 'absolute'
+  // }
   var style = {
-    height: height + 'px',
-    position: 'absolute'
   }
   return (
     <div>

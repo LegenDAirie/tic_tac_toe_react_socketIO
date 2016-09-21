@@ -4,16 +4,18 @@ import getPieces from './piecePositionLogic'
 
 const GameBoard = props => {
   var state = props.store.getState()
+  // var style = {
+  //   position: 'relative'
+  // }
   var style = {
-    position: 'relative'
   }
   return (
     <div style={ style }>
       <Grid gameSize={ state.gameSize }/>
-      { getPieces(props.store) }
     </div>
   )
 }
+// { getPieces(props.store) }
 
 GameBoard.propTypes = {
   store: React.PropTypes.object.isRequired
