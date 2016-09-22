@@ -5,6 +5,7 @@ import CurrentPlayer from './currentPlayer'
 
 const Game = function ( props ) {
   var state = props.store.getState()
+
   var gameStyle = {
     width: '45vw',
     height: '95vw',

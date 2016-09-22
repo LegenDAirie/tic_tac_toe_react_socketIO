@@ -9,14 +9,9 @@ var getPieces = function(store) {
   var state = store.getState()
   var boardCells = state.gameState.boardState
   var currentCells = []
-  var gameSize = state.gameSize
-  var cellSize = gameSize / 3
 
   for (var rowNum = 0; rowNum < 3; rowNum++) {
     for (var colNum = 0; colNum < 3; colNum++) {
-      // var width = cellSize
-      // var left = cellSize * colNum
-      // var top = cellSize * rowNum
       let position = (rowNum*3) + colNum
       var identifier = '' + rowNum + colNum
       var handleCellSelect = function() {
