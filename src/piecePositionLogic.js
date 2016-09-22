@@ -14,9 +14,9 @@ var getPieces = function(store) {
 
   for (var rowNum = 0; rowNum < 3; rowNum++) {
     for (var colNum = 0; colNum < 3; colNum++) {
-      var width = cellSize - 1
-      var left = cellSize * colNum
-      var top = cellSize * rowNum
+      // var width = cellSize
+      // var left = cellSize * colNum
+      // var top = cellSize * rowNum
       let position = (rowNum*3) + colNum
       var identifier = '' + rowNum + colNum
       var handleCellSelect = function() {
@@ -36,11 +36,15 @@ var getPieces = function(store) {
       }
 
       var style = {
-        height: width + 'px',
-        width: width + 'px',
-        left: left + 'px',
-        top: top + 'px',
-        position: 'absolute'
+        zIndex: '1',
+        boxSizing: 'border-box',
+        minWidth: '100px',
+        minHeight: '100px',
+        maxWidth: '26.9166667vh',
+        maxHeight: '26.9166667vh',
+        height: '15vw',
+        flexBasis: '15vw',
+        backgroundColor: 'rgba(50, 50, 50, .25)'
       }
 
       currentCells.push(
