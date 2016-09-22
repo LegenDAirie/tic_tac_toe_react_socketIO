@@ -58,7 +58,7 @@ export const resetButtonStyle = {
   padding: '0 15px'
 }
 
-// into piecePositionLogic
+// into piecePositionLogic.js
 export const pieceStyle = {
   zIndex: '1',
   boxSizing: 'border-box',
@@ -69,4 +69,15 @@ export const pieceStyle = {
   height: '15vw',
   flexBasis: '15vw',
   backgroundColor: 'rgba(50, 50, 50, .25)'
+}
+
+// into grid.js
+export const gridStyle = {
+  height: '45vw',
+  width: '45vw',
+  maxWidth: '80.75vh',
+  maxHeight: '80.75vh',
+  minWidth: '300px',
+  minHeight: '300px',
+  position: 'absolute',
 }

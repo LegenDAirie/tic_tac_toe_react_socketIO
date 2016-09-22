@@ -1,19 +1,12 @@
 import React from 'react'
+import { gridStyle } from './reactCSS/componentStyles'
 
 var Grid = function(props) {
   var height = props.gameSize
-  var style = {
-    height: '45vw',
-    width: '45vw',
-    maxWidth: '80.75vh',
-    maxHeight: '80.75vh',
-    minWidth: '300px',
-    minHeight: '300px',
-    position: 'absolute',
-  }
+
   return (
     <div>
-      <svg className="game-board" style={ style } viewBox="0 0 300 300">
+      <svg className="game-board" style={ gridStyle } viewBox="0 0 300 300">
         <title>
           TicTacToe Board
         </title>
