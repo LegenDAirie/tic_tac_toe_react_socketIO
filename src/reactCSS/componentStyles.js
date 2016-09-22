@@ -3,7 +3,7 @@
 export const gameStyle = {
   width: '100vw',
   height: '100vh',
-  background: '#777',
+  // background: '#777',
   display: 'flex',
   flexDirection: 'column',
   minHeight: '350px',
@@ -13,7 +13,7 @@ export const gameStyle = {
 export const optionsStyle = {
   display: 'flex',
   // flexGrow: 1,
-  backgroundColor: '#913',
+  // backgroundColor: '#913',
   justifyContent: 'space-around',
   alignItems: 'center',
   minHeight: '50px',
@@ -25,7 +25,7 @@ export const optionsStyle = {
 }
 
 export const gameBoardStyle = {
-  background: '#9b8',
+  // background: '#9b8',
   height: '85vh',
   width: '100vw',
   display: 'flex',
@@ -37,7 +37,7 @@ export const gameBoardStyle = {
 }
 
 export const playerStyle = {
-  backgroundColor: '#9b1',
+  // backgroundColor: '#9b1',
   color: 'white',
   maxHeight: '14.25vh',
   fontSize: '6.25vmin',
@@ -61,8 +61,8 @@ export const pieceStyle = {
   boxSizing: 'border-box',
   height: '33.33333333333333333%',
   width: '33.33333333333333333%',
-  backgroundColor: 'rgba(50, 50, 50, .25)',
-  border: '1px solid black',
+  // backgroundColor: 'rgba(50, 50, 50, .25)',
+  // border: '1px solid black',
 }
 
 export const gridStyle = {

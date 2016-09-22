@@ -10,7 +10,7 @@ The purpose of this project is to demonstrate the fundamentals of react, socketI
 * [x] Reset Game
 * [x] Display current player
 * [x] Apply decent styles
-
+* [x] XOXO
 ---
 #### Nice to have functionality
 * [ ] Score
