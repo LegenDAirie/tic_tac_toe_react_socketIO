@@ -4,7 +4,7 @@ import { playerStyle } from './reactCSS/componentStyles'
 const CurrentPlayer = props => {
 
   return (
-    <div style={ playerStyle }>CurrentPlayer: { props.currentPlayer }</div>
+    <div style={ playerStyle }> Turn: { props.currentPlayer } </div>
   )
 }
 
