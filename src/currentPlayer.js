@@ -1,15 +1,10 @@
 import React from 'react'
+import { playerStyle } from './reactCSS/componentStyles'
 
 const CurrentPlayer = props => {
-  var style = {
-    backgroundColor: '#9b1',
-    color: 'white',
-    maxHeight: '14.25vh',
-    fontSize: '5vmin',
-  }
 
   return (
-    <div style={ style }>CurrentPlayer: { props.currentPlayer }</div>
+    <div style={ playerStyle }>CurrentPlayer: { props.currentPlayer }</div>
   )
 }
 

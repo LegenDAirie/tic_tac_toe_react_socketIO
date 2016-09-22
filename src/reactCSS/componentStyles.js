@@ -1,5 +1,4 @@
 // into game.js
-
 export const gameStyle = {
   width: '45vw',
   height: '95vw',
@@ -37,4 +36,12 @@ export const gameBoardStyle = {
   maxHeight: '80.75vh',
   flexWrap: 'wrap',
   alignContent: 'flex-start',
+}
+
+// into currentPlayer.js
+export const playerStyle = {
+  backgroundColor: '#9b1',
+  color: 'white',
+  maxHeight: '14.25vh',
+  fontSize: '5vmin',
 }
