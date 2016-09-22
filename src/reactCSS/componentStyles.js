@@ -45,3 +45,15 @@ export const playerStyle = {
   maxHeight: '14.25vh',
   fontSize: '5vmin',
 }
+
+// into resetButton.js
+export const resetButtonStyle = {
+  backgroundColor: '#f55',
+  color: 'white',
+  border: 'none',
+  minHeight: '50px',
+  maxHeight: '14.25vh',
+  fontSize: '5vmin',
+  borderRadius: '5px',
+  padding: '0 15px'
+}
