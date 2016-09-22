@@ -2,15 +2,15 @@ import React from 'react'
 import ResetButton from './resetButton'
 import GameBoard from './gameBoard'
 import CurrentPlayer from './currentPlayer'
-import { gameStyle, optionsStyle } from './reactCSS/componentStyles'
+import { gameStylePortrait, optionsStylePortrait } from './reactCSS/componentStyles'
 
 const Game = function ( props ) {
   var state = props.store.getState()
 
   return (
     <div>
-      <div id="board-container" style={ gameStyle }>
-        <div style={ optionsStyle }>
+      <div id="board-container" style={ gameStylePortrait }>
+        <div style={ optionsStylePortrait }>
           <ResetButton store={ props.store } />
           <CurrentPlayer currentPlayer={ state.gameState.currentPlayer } />
         </div>

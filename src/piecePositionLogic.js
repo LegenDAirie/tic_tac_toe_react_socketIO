@@ -3,7 +3,7 @@ import PieceX from './pieceX'
 import PieceO from './pieceO'
 import EmptyCell from './emptyCell'
 import { addPiece } from './stateManagement/actionTypes'
-import { pieceStyle } from './reactCSS/componentStyles'
+import { pieceStylePortrait } from './reactCSS/componentStyles'
 
 var getPieces = function(store) {
   var state = store.getState()
@@ -31,7 +31,7 @@ var getPieces = function(store) {
       }
 
       currentCells.push(
-        <Piece key={ identifier } style={ pieceStyle }
+        <Piece key={ identifier } style={ pieceStylePortrait }
           handleCellSelect={ handleCellSelect }
         />
       )

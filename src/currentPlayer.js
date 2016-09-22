@@ -1,10 +1,10 @@
 import React from 'react'
-import { playerStyle } from './reactCSS/componentStyles'
+import { playerStylePortrait } from './reactCSS/componentStyles'
 
 const CurrentPlayer = props => {
 
   return (
-    <div style={ playerStyle }>CurrentPlayer: { props.currentPlayer }</div>
+    <div style={ playerStylePortrait }>CurrentPlayer: { props.currentPlayer }</div>
   )
 }
 
