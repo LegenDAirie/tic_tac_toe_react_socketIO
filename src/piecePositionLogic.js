@@ -3,7 +3,7 @@ import PieceX from './pieceX'
 import PieceO from './pieceO'
 import EmptyCell from './emptyCell'
 import { addPiece } from './stateManagement/actionTypes'
-
+import { pieceStyle } from './reactCSS/componentStyles'
 
 var getPieces = function(store) {
   var state = store.getState()
@@ -30,20 +30,8 @@ var getPieces = function(store) {
         Piece = PieceO
       }
 
-      var style = {
-        zIndex: '1',
-        boxSizing: 'border-box',
-        minWidth: '100px',
-        minHeight: '100px',
-        maxWidth: '26.9166667vh',
-        maxHeight: '26.9166667vh',
-        height: '15vw',
-        flexBasis: '15vw',
-        backgroundColor: 'rgba(50, 50, 50, .25)'
-      }
-
       currentCells.push(
-        <Piece key={ identifier } style={ style }
+        <Piece key={ identifier } style={ pieceStyle }
           handleCellSelect={ handleCellSelect }
         />
       )

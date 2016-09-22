@@ -57,3 +57,16 @@ export const resetButtonStyle = {
   borderRadius: '5px',
   padding: '0 15px'
 }
+
+// into piecePositionLogic
+export const pieceStyle = {
+  zIndex: '1',
+  boxSizing: 'border-box',
+  minWidth: '100px',
+  minHeight: '100px',
+  maxWidth: '26.9166667vh',
+  maxHeight: '26.9166667vh',
+  height: '15vw',
+  flexBasis: '15vw',
+  backgroundColor: 'rgba(50, 50, 50, .25)'
+}
