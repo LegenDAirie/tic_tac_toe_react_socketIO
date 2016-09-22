@@ -41,6 +41,7 @@ export const playerStyle = {
   color: 'white',
   maxHeight: '14.25vh',
   fontSize: '6.25vmin',
+  fontFamily: 'Helvetica'
 }
 
 export const resetButtonStyle = {
@@ -50,6 +51,7 @@ export const resetButtonStyle = {
   minHeight: '50px',
   maxHeight: '14.25vh',
   fontSize: '6.25vmin',
+  fontFamily: 'Helvetica',
   borderRadius: '5px',
   padding: '0 15px'
 }
