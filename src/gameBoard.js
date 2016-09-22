@@ -3,7 +3,7 @@ import Grid from './grid'
 import getPieces from './piecePositionLogic'
 import { gameBoardStyle } from './reactCSS/componentStyles'
 
-const GameBoard = props => {
+const GameBoard = function(props) {
   var state = props.store.getState()
 
   return (
