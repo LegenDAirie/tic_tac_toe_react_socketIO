@@ -1,3 +1,5 @@
+// into game.js
+
 export const gameStyle = {
   width: '45vw',
   height: '95vw',
@@ -21,4 +23,18 @@ export const optionsStyle = {
   minWidth: '300px',
   maxHeight: '14.25vh',
   width: '100%',
+}
+
+// into gameBoard.js
+export const gameBoardStyle = {
+  background: '#9b8',
+  height: '85%',
+  width: '45vw',
+  display: 'flex',
+  minWidth: '300px',
+  minHeight: '300px',
+  maxWidth: '80.75vh',
+  maxHeight: '80.75vh',
+  flexWrap: 'wrap',
+  alignContent: 'flex-start',
 }
