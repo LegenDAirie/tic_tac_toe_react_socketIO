@@ -1,13 +1,13 @@
 import React from 'react'
 import Grid from './grid'
 import getPieces from './piecePositionLogic'
-import { gameBoardStylePortrait } from './reactCSS/componentStyles'
+import { gameBoardStyle } from './reactCSS/componentStyles'
 
 const GameBoard = props => {
   var state = props.store.getState()
 
   return (
-    <div style={ gameBoardStylePortrait }>
+    <div style={ gameBoardStyle }>
       <Grid gameSize={ state.gameSize }/>
       { getPieces(props.store) }
     </div>

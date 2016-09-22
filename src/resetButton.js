@@ -1,10 +1,10 @@
 import React from 'react'
 import { resetBoard } from './stateManagement/actionTypes'
-import { resetButtonStylePortrait } from './reactCSS/componentStyles'
+import { resetButtonStyle } from './reactCSS/componentStyles'
 
 const ResetButton = props => (
   <div>
-    <button style={ resetButtonStylePortrait } onClick={ () => props.store.dispatch(resetBoard()) }>
+    <button style={ resetButtonStyle } onClick={ () => props.store.dispatch(resetBoard()) }>
       Reset Game
     </button>
   </div>
