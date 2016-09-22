@@ -4,6 +4,7 @@ import getPieces from './piecePositionLogic'
 
 const GameBoard = props => {
   var state = props.store.getState()
+
   var style = {
     background: '#9b8',
     height: '85%',
