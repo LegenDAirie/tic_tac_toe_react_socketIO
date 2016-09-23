@@ -38,7 +38,7 @@ export const gameBoardStyle = {
 
 export const playerStyle = {
   // backgroundColor: '#9b1',
-  color: 'white',
+  color: 'black',
   maxHeight: '14.25vh',
   fontSize: '6.25vmin',
   fontFamily: 'Helvetica'
