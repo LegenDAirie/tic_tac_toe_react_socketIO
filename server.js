@@ -1,6 +1,7 @@
 var http = require('http')
 var httpServer = http.createServer(handler)
-var fs = require('fs');
+var fs = require('fs')
+var io = require('socket.io')(httpServer)
 
 httpServer.listen(8000, 'localhost');
 
@@ -23,3 +24,11 @@ function handler (req, res) {
     serveUpFile(req, res, './index.html')
   }
 }
+
+io.on('connection', function (socket) {
+  console.log('a user has connected to the server')
+
+  socket.on('disconnect', function () {
+    console.log('a user has disconnected from the server')
+  })
+})

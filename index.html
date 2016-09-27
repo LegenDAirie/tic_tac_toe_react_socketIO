@@ -7,6 +7,16 @@
   </head>
   <body>
     <div id="root"></div>
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      var socket = io('http://localhost:8000')
+
+      socket.on('connection', function () {
+
+        socket.on('disconnect', function () {
+        })
+      })
+    </script>
     <script src="./static/bundle.js" charset="utf-8"></script>
   </body>
 </html>
