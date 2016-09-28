@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack --progress --colors --watch",
     "server": "nodemon server.js",
+    "server:peer": "peerjs --port 9000 --key peerjs",
     "test": "mocha --compilers js:babel-register --recursive",
     "test:watch": "npm test -- --watch",
     "lint": "eslint src"
@@ -13,6 +14,7 @@
   "author": "Airiel D. Salvatore",
   "license": "MIT",
   "dependencies": {
+    "peer": "^0.2.8",
     "peerjs": "^0.3.14",
     "react": "^15.3.1",
     "react-dom": "^15.3.1"
