@@ -6,7 +6,6 @@
   "scripts": {
     "start": "webpack --progress --colors --watch",
     "server": "nodemon server.js",
-    "server:peer": "peerjs --port 9000 --key peerjs",
     "test": "mocha --compilers js:babel-register --recursive",
     "test:watch": "npm test -- --watch",
     "lint": "eslint src"
