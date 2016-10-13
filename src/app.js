@@ -9,9 +9,17 @@ const socket = io()
 
 console.log(socket.id)
 
+socket.on('connected', function (data) {
+  console.log(data)
+})
+
 socket.on('hello', function (data) {
   console.log(data)
 })
+
+window.gtfo = function () {
+  socket.emit('gtfo')
+}
 
 window.sayHi = function () {
   socket.emit('hello', "friend!")

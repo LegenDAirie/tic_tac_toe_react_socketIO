@@ -27,31 +27,39 @@ function requestHandler (req, res) {
 
 io.on('connection', function (socket) {
   console.log('socket connected to the server')
-
   console.log(Object.keys(io.sockets.connected).length, ' clients connected')
 
+  socket.emit('connected', 'Hi I am ' + socket.id)
+
+
   socket.leave(socket.id)
-  socket.myRoom = null
+  // var myRoom
+  var partner
 
   // socket.join(Math.random() + '', function () {
   //   console.log(socket.rooms)
   // })
 
-  console.log('socket ID: ', socket.id)
-  console.log('users: ', Object.keys(io.sockets.connected))
-  console.log('availableUsers: ', getAvailableUsers())
-  console.log('rooms: ', Object.keys(socket.adapter.rooms))
-  console.log('joining available user in new room')
-  console.log('-----before joining-----')
+  getCurrentStats(socket, 'about to connect')
   joinAvailableUser(socket, function afterJoined() {
-    console.log('-----after joining-----')
-    console.log('-----------------------------------------------------------------')
-    console.log('users: ', Object.keys(io.sockets.connected))
-    console.log('availableUsers: ', getAvailableUsers())
-    console.log('rooms: ', Object.keys(socket.adapter.rooms))
-    console.log('-----------------------------------------------------------------')
+    // myRoom = socket.myRoom
+    partner = socket.partner
+    getCurrentStats(socket, 'joined a room')
   })
 
+  socket.on('gtfo', function () {
+    socket.leave(socket.myRoom, function (data) {
+      // socket.partner.leave(socket.myRoom)
+      partner.leave(partner.myRoom)
+      // console.log(data)
+      // partner.myRoom = null
+      // partner.partner = null
+      // myRoom = socket.myRoom = null
+      // partner = socket.partner = null
+
+      getCurrentStats(socket, 'left room')
+    })
+  })
 
   socket.on('hello', function (data) {
     if (socket.myRoom) {
@@ -60,17 +68,45 @@ io.on('connection', function (socket) {
   })
 
   socket.on('disconnect', function () {
+    partner.leave(partner.myRoom, function () {
+      getCurrentStats(partner, 'partner disconnected')
+
+    })
+    // if (partner) {
+    //   partner.leave(myRoom, function (data) {
+    //     console.log(data)
+    //     partner.myRoom = null
+    //     partner.partner = null
+    //     myRoom = null
+    //     partner = null
+    //
+    //     getCurrentStats(socket, 'left room')
+    //   })
+    // }
+
     console.log('socket disconnected from the server')
   })
 })
 
+function getCurrentStats(socket, whatsHappening) {
+  console.log('-----------------------------------------------------------------')
+  console.log(whatsHappening)
+  console.log('socket ID: ', socket.id)
+  console.log('users: ', Object.keys(io.sockets.connected))
+  console.log('availableUsers: ', getAvailableUsers())
+  console.log('numbers of rooms: ', Object.keys(socket.adapter.rooms).length)
+  console.log('rooms IDs: ', Object.keys(socket.adapter.rooms))
+  console.log('room: ', socket.adapter.rooms)
+  console.log('-----------------------------------------------------------------')
+
+}
 
 var getAvailableUsers = function () {
   var users = io.sockets.connected
   var userIDs = Object.keys(users)
 
   var availableUsers = userIDs.filter(function (id) {
-    return users[id].myRoom === null
+    return !users[id].myRoom
   })
 
   return availableUsers
@@ -83,14 +119,19 @@ var joinAvailableUser = function (socket, callBack) {
   })
 
   var firstUserID = validUserIDs.shift()
+  var partner = io.sockets.connected[firstUserID]
+  connectUsers(socket, partner, callBack)
+}
 
-  if (firstUserID) {
-    var roomName = firstUserID + socket.id, callBack
-    var partner = io.sockets.connected[firstUserID]
+var connectUsers = function (socket, partner, callBack) {
+  if (partner) {
+    var roomName = socket.id + partner.id
+    socket.partner = partner
+    partner.partner = socket
     socket.myRoom = roomName
     partner.myRoom = roomName
 
-    socket.join(roomName, callBack)
-    partner.join(roomName, callBack)
+    socket.join(roomName, callBack, function (data){console.log(data)})
+    partner.join(roomName, callBack, function (data){console.log(data)})
   }
 }
