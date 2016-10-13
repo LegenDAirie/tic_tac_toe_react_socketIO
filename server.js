@@ -2,8 +2,6 @@ var http = require('http')
 var httpServer = http.createServer(requestHandler)
 var fs = require('fs')
 var io = require('socket.io')(httpServer)
-var p2p = require('socket.io-p2p-server').Server
-io.use(p2p)
 
 httpServer.listen(8000, 'localhost');
 
@@ -28,14 +26,71 @@ function requestHandler (req, res) {
 }
 
 io.on('connection', function (socket) {
-  console.log('client connected to the server')
+  console.log('socket connected to the server')
 
-  socket.on('peer-msg', function (data) {
-    console.log('Message from peer %s', data)
-    socket.broadcast.emit('peer-msg', data)
+  console.log(Object.keys(io.sockets.connected).length, ' clients connected')
+
+  socket.leave(socket.id)
+  socket.myRoom = null
+
+  // socket.join(Math.random() + '', function () {
+  //   console.log(socket.rooms)
+  // })
+
+  console.log('socket ID: ', socket.id)
+  console.log('users: ', Object.keys(io.sockets.connected))
+  console.log('availableUsers: ', getAvailableUsers())
+  console.log('rooms: ', Object.keys(socket.adapter.rooms))
+  console.log('joining available user in new room')
+  console.log('-----before joining-----')
+  joinAvailableUser(socket, function afterJoined() {
+    console.log('-----after joining-----')
+    console.log('-----------------------------------------------------------------')
+    console.log('users: ', Object.keys(io.sockets.connected))
+    console.log('availableUsers: ', getAvailableUsers())
+    console.log('rooms: ', Object.keys(socket.adapter.rooms))
+    console.log('-----------------------------------------------------------------')
+  })
+
+
+  socket.on('hello', function (data) {
+    if (socket.myRoom) {
+      io.to(socket.myRoom).emit('hello', data)
+    }
   })
 
   socket.on('disconnect', function () {
-    console.log('client disconnected from the server')
+    console.log('socket disconnected from the server')
   })
 })
+
+
+var getAvailableUsers = function () {
+  var users = io.sockets.connected
+  var userIDs = Object.keys(users)
+
+  var availableUsers = userIDs.filter(function (id) {
+    return users[id].myRoom === null
+  })
+
+  return availableUsers
+}
+
+var joinAvailableUser = function (socket, callBack) {
+  var availableUserIDs = getAvailableUsers()
+  var validUserIDs = availableUserIDs.filter( function (userID) {
+    return socket.id !== userID
+  })
+
+  var firstUserID = validUserIDs.shift()
+
+  if (firstUserID) {
+    var roomName = firstUserID + socket.id, callBack
+    var partner = io.sockets.connected[firstUserID]
+    socket.myRoom = roomName
+    partner.myRoom = roomName
+
+    socket.join(roomName, callBack)
+    partner.join(roomName, callBack)
+  }
+}
