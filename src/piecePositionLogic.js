@@ -2,6 +2,7 @@ import React from 'react'
 import PieceX from './pieceX'
 import PieceO from './pieceO'
 import EmptyCell from './emptyCell'
+import thisPlayer from './socket'
 import { addPiece } from './stateManagement/actionTypes'
 import { pieceStyle } from './reactCSS/componentStyles'
 
@@ -15,7 +16,7 @@ var getPieces = function(store) {
       let position = (rowNum*3) + colNum
       var identifier = '' + rowNum + colNum
       var handleCellSelect = function() {
-        store.dispatch(addPiece(position, state.gameState.currentPlayer))
+        store.dispatch(addPiece(position, thisPlayer.piece))
       }
       if (state.gameState.gameOver) {
         handleCellSelect = () => {}

@@ -7,18 +7,11 @@ socket.on('connected', function (data) {
 
 socket.on('start game', function (piece) {
   console.log('myPiece is ' + piece)
-})
-
-socket.on('hello', function (data) {
-  console.log(data)
+  socket.piece = piece
 })
 
 window.gtfo = function () {
   socket.emit('leave room')
-}
-
-window.sayHi = function () {
-  socket.emit('hello', "friend!")
 }
 
 window.getStatusPlz = function () {
