@@ -27,38 +27,34 @@ function requestHandler (req, res) {
 
 io.on('connection', function (socket) {
   console.log('socket connected to the server')
-  console.log(Object.keys(io.sockets.connected).length, ' clients connected')
 
   socket.emit('connected', 'Hi I am ' + socket.id)
 
-
+  //setup
+  var partnerRef
   socket.leave(socket.id)
-  // var myRoom
-  var partner
-
-  // socket.join(Math.random() + '', function () {
-  //   console.log(socket.rooms)
-  // })
+  socket.getPartner = function (partner) { // if socket is the one being connected to
+    partnerRef = socket.partner = partner
+    console.log(partnerRef + '////////////////////////////////////////////////')
+  }
 
   getCurrentStats(socket, 'about to connect')
-  joinAvailableUser(socket, function afterJoined() {
-    // myRoom = socket.myRoom
-    partner = socket.partner
-    getCurrentStats(socket, 'joined a room')
+
+  socket.on('join room', function () {
+    joinAvailableUser(socket, function afterJoined() {
+      // if socket is the one connecting
+      // console.log('I am ' + socket.id + ' and my partner is ' + socket.partner.id)
+      partnerRef = socket.partner
+      getCurrentStats(socket, 'joined a room')
+    })
   })
 
-  socket.on('gtfo', function () {
-    socket.leave(socket.myRoom, function (data) {
-      // socket.partner.leave(socket.myRoom)
-      partner.leave(partner.myRoom)
-      // console.log(data)
-      // partner.myRoom = null
-      // partner.partner = null
-      // myRoom = socket.myRoom = null
-      // partner = socket.partner = null
+  socket.on('leave room', function () {
+    leaveRoom(socket, partnerRef)
+  })
 
-      getCurrentStats(socket, 'left room')
-    })
+  socket.on('status', function () { // for testing broker logic
+    getCurrentStats(socket, 'checking status')
   })
 
   socket.on('hello', function (data) {
@@ -68,23 +64,12 @@ io.on('connection', function (socket) {
   })
 
   socket.on('disconnect', function () {
-    partner.leave(partner.myRoom, function () {
-      getCurrentStats(partner, 'partner disconnected')
-
-    })
-    // if (partner) {
-    //   partner.leave(myRoom, function (data) {
-    //     console.log(data)
-    //     partner.myRoom = null
-    //     partner.partner = null
-    //     myRoom = null
-    //     partner = null
-    //
-    //     getCurrentStats(socket, 'left room')
-    //   })
-    // }
-
     console.log('socket disconnected from the server')
+    if (partnerRef) {
+      partnerRef.leave(partnerRef.myRoom, function () {
+        removePartnerReference (socket, partnerRef)
+      })
+    }
   })
 })
 
@@ -99,6 +84,24 @@ function getCurrentStats(socket, whatsHappening) {
   console.log('room: ', socket.adapter.rooms)
   console.log('-----------------------------------------------------------------')
 
+}
+
+var leaveRoom = function (user, usersPartner) {
+  user.leave(user.myRoom, function () {
+    usersPartner.leave(usersPartner.myRoom, function() {
+      removePartnerReference (user, usersPartner)
+
+      getCurrentStats(user, 'left room')
+    })
+  })
+}
+
+var removePartnerReference = function (user, usersPartner) {
+  user.myRoom = null
+  user.partner = null
+  usersPartner.myRoom = null
+  usersPartner.partner = null
+  usersPartner = null
 }
 
 var getAvailableUsers = function () {
@@ -131,7 +134,8 @@ var connectUsers = function (socket, partner, callBack) {
     socket.myRoom = roomName
     partner.myRoom = roomName
 
-    socket.join(roomName, callBack, function (data){console.log(data)})
-    partner.join(roomName, callBack, function (data){console.log(data)})
+    socket.join(roomName, callBack)
+    partner.join(roomName)
+    partner.getPartner(socket)
   }
 }

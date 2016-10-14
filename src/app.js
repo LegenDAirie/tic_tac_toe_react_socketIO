@@ -18,11 +18,19 @@ socket.on('hello', function (data) {
 })
 
 window.gtfo = function () {
-  socket.emit('gtfo')
+  socket.emit('leave room')
 }
 
 window.sayHi = function () {
   socket.emit('hello', "friend!")
+}
+
+window.getStatusPlz = function () {
+  socket.emit('status')
+}
+
+window.findFriend = function () {
+  socket.emit('join room')
 }
 
 // var store = createStore(appReducer)
