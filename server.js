@@ -27,13 +27,13 @@ function requestHandler (req, res) {
 
 io.on('connection', function (socket) {
   console.log('socket connected to the server')
-
   socket.emit('connected', 'Hi I am ' + socket.id)
 
   //setup
   var partnerRef
   socket.leave(socket.id)
   socket.getPartner = function (partner) { // if socket is the one being connected to
+    socket.emit('myPiece', 'X')
     partnerRef = socket.partner = partner
     console.log(partnerRef + '////////////////////////////////////////////////')
   }
@@ -41,9 +41,10 @@ io.on('connection', function (socket) {
   getCurrentStats(socket, 'about to connect')
 
   socket.on('join room', function () {
-    joinAvailableUser(socket, function afterJoined() {
-      // if socket is the one connecting
+    joinAvailableUser(socket, function afterJoined () {
+      socket.emit('myPiece', 'O')// if socket is the one connecting
       // console.log('I am ' + socket.id + ' and my partner is ' + socket.partner.id)
+
       partnerRef = socket.partner
       getCurrentStats(socket, 'joined a room')
     })
