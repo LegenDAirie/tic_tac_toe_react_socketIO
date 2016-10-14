@@ -1,13 +1,11 @@
 import io from 'socket.io-client'
 const socket = io()
-export default socket
 
 socket.on('connected', function (data) {
   console.log(data)
-  socket.ZZZk
 })
 
-socket.on('myPiece', function (piece) {
+socket.on('start game', function (piece) {
   console.log('myPiece is ' + piece)
 })
 
@@ -30,3 +28,5 @@ window.getStatusPlz = function () {
 window.findFriend = function () {
   socket.emit('join room')
 }
+
+export default socket

@@ -33,7 +33,7 @@ io.on('connection', function (socket) {
   var partnerRef
   socket.leave(socket.id)
   socket.getPartner = function (partner) { // if socket is the one being connected to
-    socket.emit('myPiece', 'X')
+    socket.emit('start game', { piece: 'X' })
     partnerRef = socket.partner = partner
     console.log(partnerRef + '////////////////////////////////////////////////')
   }
@@ -42,7 +42,7 @@ io.on('connection', function (socket) {
 
   socket.on('join room', function () {
     joinAvailableUser(socket, function afterJoined () {
-      socket.emit('myPiece', 'O')// if socket is the one connecting
+      socket.emit('start game', 'O')// if socket is the one connecting
       // console.log('I am ' + socket.id + ' and my partner is ' + socket.partner.id)
 
       partnerRef = socket.partner
