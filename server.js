@@ -58,12 +58,6 @@ io.on('connection', function (socket) {
     getCurrentStats(socket, 'checking status')
   })
 
-  socket.on('hello', function (data) {
-    if (socket.myRoom) {
-      io.to(socket.myRoom).emit('hello', data)
-    }
-  })
-
   socket.on('disconnect', function () {
     console.log('socket disconnected from the server')
     if (partnerRef) {
