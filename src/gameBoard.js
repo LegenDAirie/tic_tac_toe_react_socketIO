@@ -8,8 +8,8 @@ const GameBoard = function(props) {
 
   return (
     <div style={ gameBoardStyle }>
-      <Grid gameSize={ state.gameSize }/>
-      { getPieces(props.store) }
+      <Grid/>
+      { getPieces(state) }
     </div>
   )
 }

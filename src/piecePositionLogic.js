@@ -5,8 +5,7 @@ import EmptyCell from './emptyCell'
 import { pieceStyle } from './reactCSS/componentStyles'
 import { socket } from './socket'
 
-var getPieces = function(store) {
-  var state = store.getState()
+var getPieces = function(state) {
   var boardCells = state.gameState.boardState
   var currentCells = []
 
