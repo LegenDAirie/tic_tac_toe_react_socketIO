@@ -15,8 +15,4 @@ const Grid = () => (
   </div>
 )
 
-Grid.propTypes = {
-  gameSize: React.PropTypes.number.isRequired
-}
-
 export default Grid

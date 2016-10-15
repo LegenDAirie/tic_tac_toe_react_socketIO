@@ -16,6 +16,7 @@ socket.on('start game', function (piece) {
   console.log('game start!')
   console.log('I am piece: ', piece)
   socket.piece = piece
+  store.dispatch(resetBoard())
 })
 
 socket.on('add piece', function (data) {
