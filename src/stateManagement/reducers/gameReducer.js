@@ -55,7 +55,7 @@ const gameReducer = (gameState = initialState, action) => {
     }
     case RESET_BOARD:
       return Object.assign({}, initialState, {
-        //switch starting player
+        currentPlayer: gameState.currentPlayer === 'O' ? 'O' : 'X'
       })
     default:
       return gameState
