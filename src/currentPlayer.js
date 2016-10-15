@@ -6,7 +6,7 @@ const CurrentPlayer = props => {
   var activePlayer = props.state.gameState.currentPlayer === socket.piece ? 'yours': 'there\'s'
   activePlayer = socket.piece === '' ? 'waiting on player to connect' : 'Turn: ' + activePlayer
   if (props.state.gameState.gameOver) {
-    activePlayer = socket.piece !== props.state.gameState.currentPlayer ? 'You Win!' : 'You lose!'
+    activePlayer = socket.piece === props.state.gameState.currentPlayer ? 'You Win!' : 'You lose!'
   }
 
   return <div style={ playerStyle }> { activePlayer } </div>
