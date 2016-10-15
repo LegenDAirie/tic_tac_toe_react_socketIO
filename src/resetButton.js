@@ -10,8 +10,4 @@ const ResetButton = () => (
   </div>
 )
 
-ResetButton.propTypes = {
-  store: React.PropTypes.object.isRequired
-}
-
 export default ResetButton
