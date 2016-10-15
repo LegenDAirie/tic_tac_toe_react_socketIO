@@ -1,6 +1,10 @@
 # Multiplayer Tic Tac Toe
 Technologies:
-* reac
+* React
+* Redux style state management (from scratch)
+* Socket.io
+* Mocha (testing)
+* webpack
 ---
 #### Required functionality
 
