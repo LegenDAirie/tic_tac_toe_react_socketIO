@@ -1,43 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import createStore from './stateManagement/createStore'
-import appReducer from './stateManagement/reducers/appReducer'
 import Game from './game'
-import setPlayerPiece from './stateManagement/actionTypes'
-import addPiece from './stateManagement/actionTypes'
-import resetBoard from './stateManagement/actionTypes'
-import io from 'socket.io-client'
-const socket = io()
-
-socket.on('connected', function (data) {
-  // waiting for other player to connect screen
-})
-
-socket.on('start game', function (piece) {
-  store.dispatch(setPlayerPiece(piece))
-})
-
-socket.on('add piece', function (position, currentPlayer) {
-  store.dispatch(addPiece(position, currentPlayer))
-})
-
-socket.on('reset board', function () {
-  store.dispatch(resetBoard())
-})
-
-window.gtfo = function () {
-  socket.emit('leave room')
-}
-
-window.getStatusPlz = function () {
-  socket.emit('status')
-}
-
-window.findFriend = function () {
-  socket.emit('join room')
-}
-
-var store = createStore(appReducer)
+import { store } from './socket'
 
 var render = function render() {
   ReactDOM.render(
