@@ -13,8 +13,5 @@ The purpose of this project is to demonstrate the fundamentals of react, socketI
 * [x] XOXO
 ---
 #### Nice to have functionality
-* [ ] Score
-* [ ] WebSockets
+* [x] WebSockets
 * [x] Responsive to browser size
-* [ ] Chat feature
-* [ ] Spectator mode

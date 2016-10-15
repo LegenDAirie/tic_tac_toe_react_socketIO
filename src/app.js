@@ -1,14 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import createStore from './stateManagement/createStore'
-import appReducer from './stateManagement/reducers/appReducer'
 import Game from './game'
-
-var store = createStore(appReducer)
+import { store } from './socket'
 
 var render = function render() {
   ReactDOM.render(
-    <Game store={ store }/>,
+    <Game state={ store.getState() }/>,
     document.getElementById('root')
   )
 }

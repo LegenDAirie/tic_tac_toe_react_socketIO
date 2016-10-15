@@ -1,6 +1,5 @@
 // Action Types
 export const ADD_PIECE = 'ADD_PIECE'
-export const SET_gameSize = 'SET_gameSize'
 export const RESET_BOARD = 'RESET_BOARD'
 
 // Players
@@ -10,18 +9,14 @@ export const PLAYERS = {
 }
 
 // Action Creators
-export function addPiece(position, currentPlayer) {
+export function addPiece (position, player) {
   return {
     type: ADD_PIECE,
-    piece: currentPlayer,
+    piece: player,
     position
   }
 }
 
-export function setgameSize(gameSize) {
-  return { type: SET_gameSize, gameSize }
-}
-
-export function resetBoard() {
+export function resetBoard () {
   return { type: RESET_BOARD }
 }

@@ -1,17 +1,20 @@
 import React from 'react'
-import { resetBoard } from './stateManagement/actionTypes'
 import { resetButtonStyle } from './reactCSS/componentStyles'
+import { socket } from './socket'
 
-const ResetButton = props => (
-  <div>
-    <button style={ resetButtonStyle } onClick={ () => props.store.dispatch(resetBoard()) }>
-      Reset Game
-    </button>
-  </div>
-)
+const ResetButton = () => {
+  var joinRoom = () => socket.emit('join room')
+  var resetBoard = () => socket.emit('reset board')
+  var buttonAction = socket.piece === '' ? joinRoom : resetBoard
+  var buttonText = socket.piece === '' ? 'Join Room' : 'Reset Game'
 
-ResetButton.propTypes = {
-  store: React.PropTypes.object.isRequired
+  return (
+    <div>
+      <button style={ resetButtonStyle } onClick={ buttonAction }>
+        { buttonText }
+      </button>
+    </div>
+  )
 }
 
 export default ResetButton
