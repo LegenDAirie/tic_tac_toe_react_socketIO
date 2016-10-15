@@ -2,7 +2,6 @@ import React from 'react'
 import PieceX from './pieceX'
 import PieceO from './pieceO'
 import EmptyCell from './emptyCell'
-import thisPlayer from './socket'
 import { pieceStyle } from './reactCSS/componentStyles'
 import { socket } from './socket'
 
