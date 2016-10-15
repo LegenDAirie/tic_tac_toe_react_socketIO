@@ -36,10 +36,10 @@ socket.on('leave room', function () {
   store.dispatch(resetBoard())
 })
 
-window.findFriend = function () {
-  socket.emit('join room')
-}
-
-window.getStatusPlz = function () {
-  socket.emit('status')
-}
+// window.findFriend = function () {
+//   socket.emit('join room')
+// }
+//
+// window.getStatusPlz = function () {
+//   socket.emit('status')
+// }
