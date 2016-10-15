@@ -5,6 +5,7 @@ Technologies:
 * Socket.io
 * Mocha (testing)
 * webpack
+
 ---
 #### Required functionality
 
@@ -15,6 +16,7 @@ Technologies:
 * [x] Display current player
 * [x] Apply decent styles
 * [x] XOXO
+
 ---
 #### Nice to have functionality
 * [x] WebSockets
