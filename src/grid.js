@@ -1,7 +1,7 @@
 import React from 'react'
 import { gridStyle } from './reactCSS/componentStyles'
 
-const Grid = props => (
+const Grid = () => (
   <div>
     <svg className="game-board" style={ gridStyle } viewBox="0 0 300 300">
       <title>
