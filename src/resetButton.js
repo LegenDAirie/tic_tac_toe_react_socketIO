@@ -2,7 +2,7 @@ import React from 'react'
 import { resetButtonStyle } from './reactCSS/componentStyles'
 import { socket } from './socket'
 
-const ResetButton = props => (
+const ResetButton = () => (
   <div>
     <button style={ resetButtonStyle } onClick={ () => socket.emit('reset board') }>
       Reset Game

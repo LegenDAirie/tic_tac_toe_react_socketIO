@@ -11,7 +11,7 @@ const Game = function ( props ) {
     <div>
       <div id="board-container" style={ gameStyle }>
         <div style={ optionsStyle }>
-          <ResetButton store={ props.store } />
+          <ResetButton/>
           <CurrentPlayer currentPlayer={ state.gameState.currentPlayer } />
         </div>
         <GameBoard store={ props.store } />
