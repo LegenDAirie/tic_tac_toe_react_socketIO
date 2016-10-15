@@ -2,7 +2,7 @@
 [Play!](https://whispering-stream-10151.herokuapp.com/)
 
 ---
-Technologies:
+#### Technologies:
 * React
 * Redux style state management (from scratch)
 * Socket.io
