@@ -10,6 +10,7 @@ const Game = function ( props ) {
   console.log('currentPlayer: ', state.gameState.currentPlayer)
   console.log('your piece: ', socket.piece)
   var whichTurn = state.gameState.currentPlayer === socket.piece ? 'yours': 'there\'s'
+  whichTurn = socket.piece === '' ? 'waiting on player to connect' : 'Turn: ' + whichTurn
 
   return (
     <div>

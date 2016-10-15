@@ -2,7 +2,7 @@ import React from 'react'
 import { playerStyle } from './reactCSS/componentStyles'
 
 const CurrentPlayer = props => (
-  <div style={ playerStyle }> Turn: { props.currentPlayer } </div>
+  <div style={ playerStyle }> { props.currentPlayer } </div>
 )
 
 CurrentPlayer.propTypes = {
