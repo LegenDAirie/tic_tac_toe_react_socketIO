@@ -29,8 +29,8 @@ function checkIfWon(boardState, action) {
   return hasBeenWon
 }
 
-function getNextPlayer(gameState, action) {
-  if (gameState.boardState[action.position] !== '') {
+function getNextPlayer(gameState, action, gameOver) {
+  if (gameState.boardState[action.position] !== '' || gameOver) {
     return gameState.currentPlayer
   }
   return gameState.currentPlayer === X ? O: X
@@ -48,14 +48,15 @@ const gameReducer = (gameState = initialState, action) => {
   switch (action.type) {
     case ADD_PIECE:
       if (gameOver || currentPlayer !== action.piece) return gameState
+      var won = checkIfWon(boardState, action)
     return {
-      currentPlayer: getNextPlayer(gameState, action),
+      currentPlayer: getNextPlayer(gameState, action, won),
       boardState: boardReducer(boardState, action),
-      gameOver: checkIfWon(boardState, action)
+      gameOver: won
     }
     case RESET_BOARD:
       return Object.assign({}, initialState, {
-        currentPlayer: gameState.currentPlayer === 'O' ? 'O' : 'X'
+        currentPlayer: gameState.currentPlayer === 'O' ? 'X' : 'O'
       })
     default:
       return gameState
