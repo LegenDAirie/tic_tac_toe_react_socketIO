@@ -29651,7 +29651,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var CurrentPlayer = function CurrentPlayer(props) {
-	  var activePlayer = props.state.gameState.currentPlayer === _socket.socket.piece ? 'yours' : 'there\'s';
+	  var activePlayer = props.state.gameState.currentPlayer === _socket.socket.piece ? 'yours' : 'theres';
 	  activePlayer = _socket.socket.piece === '' ? 'waiting on player to connect' : 'Turn: ' + activePlayer;
 	  if (props.state.gameState.gameOver) {
 	    activePlayer = _socket.socket.piece === props.state.gameState.currentPlayer ? 'You Win!' : 'You lose!';

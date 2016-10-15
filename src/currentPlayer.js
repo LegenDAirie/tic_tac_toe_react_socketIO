@@ -3,7 +3,7 @@ import { playerStyle } from './reactCSS/componentStyles'
 import { socket } from './socket'
 
 const CurrentPlayer = props => {
-  var activePlayer = props.state.gameState.currentPlayer === socket.piece ? 'yours': 'there\'s'
+  var activePlayer = props.state.gameState.currentPlayer === socket.piece ? 'yours': 'theres'
   activePlayer = socket.piece === '' ? 'waiting on player to connect' : 'Turn: ' + activePlayer
   if (props.state.gameState.gameOver) {
     activePlayer = socket.piece === props.state.gameState.currentPlayer ? 'You Win!' : 'You lose!'
