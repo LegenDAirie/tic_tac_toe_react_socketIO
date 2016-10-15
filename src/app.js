@@ -4,6 +4,8 @@ import createStore from './stateManagement/createStore'
 import appReducer from './stateManagement/reducers/appReducer'
 import Game from './game'
 import setPlayerPiece from './stateManagement/actionTypes'
+import addPiece from './stateManagement/actionTypes'
+import resetBoard from './stateManagement/actionTypes'
 import io from 'socket.io-client'
 const socket = io()
 
@@ -13,6 +15,14 @@ socket.on('connected', function (data) {
 
 socket.on('start game', function (piece) {
   store.dispatch(setPlayerPiece(piece))
+})
+
+socket.on('add piece', function (position, currentPlayer) {
+  store.dispatch(addPiece(position, currentPlayer))
+})
+
+socket.on('reset board', function () {
+  store.dispatch(resetBoard())
 })
 
 window.gtfo = function () {

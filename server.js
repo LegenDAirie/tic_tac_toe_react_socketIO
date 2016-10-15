@@ -58,6 +58,25 @@ io.on('connection', function (socket) {
     getCurrentStats(socket, 'checking status')
   })
 
+
+
+
+
+
+
+  socket.on('add piece', function (data) {
+    io.on(socket.myRoom).emit('add piece', data)
+  })
+
+  socket.on('reset board', function () {
+    io.on(socket.myRoom).emit('reset board')
+  })
+
+
+
+
+
+
   socket.on('disconnect', function () {
     console.log('socket disconnected from the server')
     if (partnerRef) {
