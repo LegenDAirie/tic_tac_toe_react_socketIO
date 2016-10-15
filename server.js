@@ -3,7 +3,7 @@ var httpServer = http.createServer(requestHandler)
 var fs = require('fs')
 var io = require('socket.io')(httpServer)
 
-httpServer.listen(8000, 'localhost');
+httpServer.listen(process.env.PORT || 8000);
 
 function serveUpFile(req, res, path) {
   fs.readFile(path.toString(), function (err, data) {
