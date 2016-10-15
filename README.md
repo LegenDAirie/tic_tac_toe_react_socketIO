@@ -1,6 +1,6 @@
 # Multiplayer Tic Tac Toe
-The purpose of this project is to demonstrate the fundamentals of react, socketIO and redux style state management.
-
+Technologies:
+* reac
 ---
 #### Required functionality
 
