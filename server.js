@@ -33,7 +33,7 @@ io.on('connection', function (socket) {
   var partnerRef
   socket.leave(socket.id)
   socket.getPartner = function (partner) { // if socket is the one being connected to
-    socket.emit('start game', { piece: 'X' })
+    socket.emit('start game', 'X')
     partnerRef = socket.partner = partner
     console.log(partnerRef + '////////////////////////////////////////////////')
   }
@@ -65,11 +65,11 @@ io.on('connection', function (socket) {
 
 
   socket.on('add piece', function (data) {
-    io.on(socket.myRoom).emit('add piece', data)
+    io.to(socket.myRoom).emit('add piece', data)
   })
 
   socket.on('reset board', function () {
-    io.on(socket.myRoom).emit('reset board')
+    io.to(socket.myRoom).emit('reset board')
   })
 
 

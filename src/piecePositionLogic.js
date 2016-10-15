@@ -3,7 +3,6 @@ import PieceX from './pieceX'
 import PieceO from './pieceO'
 import EmptyCell from './emptyCell'
 import thisPlayer from './socket'
-import { addPiece } from './stateManagement/actionTypes'
 import { pieceStyle } from './reactCSS/componentStyles'
 import { socket } from './socket'
 
@@ -17,7 +16,7 @@ var getPieces = function(store) {
       let position = (rowNum*3) + colNum
       var identifier = '' + rowNum + colNum
       var handleCellSelect = function() {
-        socket.emit('add piece', { position, currentPlayer: thisPlayer.piece })
+        socket.emit('add piece', { position, player: socket.piece })
       }
       if (state.gameState.gameOver) {
         handleCellSelect = () => {}

@@ -1,5 +1,4 @@
 import React from 'react'
-import { resetBoard } from './stateManagement/actionTypes'
 import { resetButtonStyle } from './reactCSS/componentStyles'
 import { socket } from './socket'
 

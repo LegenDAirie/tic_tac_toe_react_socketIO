@@ -43,11 +43,11 @@ const initialState = {
 }
 
 const gameReducer = (gameState = initialState, action) => {
-  const { boardState, gameOver } = gameState
+  const { boardState, gameOver, currentPlayer } = gameState
 
   switch (action.type) {
     case ADD_PIECE:
-      if (gameOver) {return gameState}
+      if (gameOver || currentPlayer !== action.piece) return gameState
     return {
       currentPlayer: getNextPlayer(gameState, action),
       boardState: boardReducer(boardState, action),
