@@ -14,7 +14,7 @@ const Game = function ( props ) {
           <ResetButton/>
           <CurrentPlayer currentPlayer={ state.gameState.currentPlayer } />
         </div>
-        <GameBoard store={ props.store } />
+        <GameBoard store={ state } />
       </div>
     </div>
   )
