@@ -10,6 +10,7 @@ socket.piece = ''
 
 socket.on('connected', function (data) {
   // waiting for other player to connect screen
+  console.log('my id: ', data)
 })
 
 socket.on('start game', function (piece) {
@@ -30,6 +31,15 @@ socket.on('reset board', function () {
   store.dispatch(resetBoard())
 })
 
+socket.on('leave room', function () {
+  socket.piece = ''
+  store.dispatch(resetBoard())
+})
+
 window.findFriend = function () {
   socket.emit('join room')
+}
+
+window.getStatusPlz = function () {
+  socket.emit('status')
 }

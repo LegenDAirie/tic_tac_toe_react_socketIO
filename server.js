@@ -35,7 +35,6 @@ io.on('connection', function (socket) {
   socket.getPartner = function (partner) { // if socket is the one being connected to
     socket.emit('start game', 'X')
     partnerRef = socket.partner = partner
-    console.log(partnerRef + '////////////////////////////////////////////////')
   }
 
   getCurrentStats(socket, 'about to connect')
@@ -58,12 +57,6 @@ io.on('connection', function (socket) {
     getCurrentStats(socket, 'checking status')
   })
 
-
-
-
-
-
-
   socket.on('add piece', function (data) {
     io.to(socket.myRoom).emit('add piece', data)
   })
@@ -72,15 +65,11 @@ io.on('connection', function (socket) {
     io.to(socket.myRoom).emit('reset board')
   })
 
-
-
-
-
-
   socket.on('disconnect', function () {
     console.log('socket disconnected from the server')
     if (partnerRef) {
       partnerRef.leave(partnerRef.myRoom, function () {
+        partnerRef.emit('leave room')
         removePartnerReference (socket, partnerRef)
       })
     }
@@ -103,6 +92,7 @@ function getCurrentStats(socket, whatsHappening) {
 var leaveRoom = function (user, usersPartner) {
   user.leave(user.myRoom, function () {
     usersPartner.leave(usersPartner.myRoom, function() {
+      usersPartner.emit('leave room')
       removePartnerReference (user, usersPartner)
 
       getCurrentStats(user, 'left room')
