@@ -37,7 +37,7 @@ io.on('connection', function (socket) {
     partnerRef = socket.partner = partner
   }
 
-  getCurrentStats(socket, 'about to connect')
+  // getCurrentStats(socket, 'about to connect')
 
   socket.on('join room', function () {
     joinAvailableUser(socket, function afterJoined () {
@@ -45,7 +45,7 @@ io.on('connection', function (socket) {
       // console.log('I am ' + socket.id + ' and my partner is ' + socket.partner.id)
 
       partnerRef = socket.partner
-      getCurrentStats(socket, 'joined a room')
+      // getCurrentStats(socket, 'joined a room')
     })
   })
 
@@ -54,7 +54,7 @@ io.on('connection', function (socket) {
   })
 
   socket.on('status', function () { // for testing broker logic
-    getCurrentStats(socket, 'checking status')
+    // getCurrentStats(socket, 'checking status')
   })
 
   socket.on('add piece', function (data) {
@@ -76,18 +76,18 @@ io.on('connection', function (socket) {
   })
 })
 
-function getCurrentStats(socket, whatsHappening) {
-  console.log('-----------------------------------------------------------------')
-  console.log(whatsHappening)
-  console.log('socket ID: ', socket.id)
-  console.log('users: ', Object.keys(io.sockets.connected))
-  console.log('availableUsers: ', getAvailableUsers())
-  console.log('numbers of rooms: ', Object.keys(socket.adapter.rooms).length)
-  console.log('rooms IDs: ', Object.keys(socket.adapter.rooms))
-  console.log('room: ', socket.adapter.rooms)
-  console.log('-----------------------------------------------------------------')
-
-}
+// function getCurrentStats(socket, whatsHappening) {
+//   console.log('-----------------------------------------------------------------')
+//   console.log(whatsHappening)
+//   console.log('socket ID: ', socket.id)
+//   console.log('users: ', Object.keys(io.sockets.connected))
+//   console.log('availableUsers: ', getAvailableUsers())
+//   console.log('numbers of rooms: ', Object.keys(socket.adapter.rooms).length)
+//   console.log('rooms IDs: ', Object.keys(socket.adapter.rooms))
+//   console.log('room: ', socket.adapter.rooms)
+//   console.log('-----------------------------------------------------------------')
+//
+// }
 
 var leaveRoom = function (user, usersPartner) {
   user.leave(user.myRoom, function () {
@@ -95,7 +95,7 @@ var leaveRoom = function (user, usersPartner) {
       usersPartner.emit('leave room')
       removePartnerReference (user, usersPartner)
 
-      getCurrentStats(user, 'left room')
+      // getCurrentStats(user, 'left room')
     })
   })
 }
